@@ -3,7 +3,7 @@
 \*-----------------------------------*/
 
 /**
- * copyright 2022 codewithsadee
+
  */
 
 
@@ -807,10 +807,17 @@ textarea.contact-input {
 
   .header,
   .header.nav-active {
-    background-color: transparent;
+  /*  background-color: transparent; */
     box-shadow: none;
     height: unset;
-    padding-block: 30px;
+ /*   padding-block: 30px; */
+    background-color: var(--space-cadet);
+    box-shadow: var(--shadow);
+  
+    box-shadow: none;
+    height: unset;
+    /*padding-block: 30px;*/
+    padding-block: 10px;
   }
 
   .header.active {
