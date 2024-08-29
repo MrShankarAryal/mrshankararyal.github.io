@@ -1,0 +1,6 @@
+# robots.txt for https://mrshankararyal.github.io/
+
+User-agent: *
+Disallow:
+
+Sitemap: https://mrshankararyal.github.io/sitemap.xml
