@@ -551,7 +551,7 @@
                 <button type="submit" class="btn-submit">Submit Message</button>
 
               </form>
-             <script>
+              <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -565,7 +565,12 @@
                 },
                 body: JSON.stringify(data),
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 alert(data.message);
                 this.reset(); // Reset the form after successful submission
