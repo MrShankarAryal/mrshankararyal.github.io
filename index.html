@@ -158,6 +158,111 @@
         }
 
 
+
+    .popup {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .popup-content {
+            background-color: #242338;
+            color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #6d8ed1;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #6d8ed1;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .popup h2 {
+            color: #6d8ed1;
+        }
+
+        .popup p {
+            margin-bottom: 15px;
+        }
+
+           /* Responsive Design */
+           @media screen and (max-width: 768px) {
+            .popup-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 20px;
+            }
+
+            .popup h2 {
+                font-size: 24px;
+            }
+
+            .popup p {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .popup-content {
+                margin: 15% auto;
+                padding: 15px;
+            }
+
+            .popup h2 {
+                font-size: 20px;
+            }
+
+            .popup p {
+                font-size: 13px;
+            }
+
+            .close {
+                font-size: 24px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .popup {
+            animation: fadeIn 0.3s ease;
+        }
+
+        .popup-content {
+            animation: slideIn 0.3s ease;
+        }
+
+
+  
+
 </style>
 </head>
 
@@ -806,29 +911,105 @@
 
 
 
+  
+
   <!-- 
     - #FOOTER
   -->
 
   <footer class="footer">
     <div class="container">
-
-      <p class="copyright">
-        &copy; 2022 <a href="#" class="copyright-link">Shankar Aryal</a>. All Rights Reseverd
-      </p>
-
-      <ul class="footer-list">
-        <li>
-          <a href="#" class="footer-link">Terms & Condition</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Privacy Policy</a>
-        </li>
-      </ul>
-
+        <p class="copyright">
+            &copy; 2022 <a href="#" class="copyright-link">Shankar Aryal</a>. All Rights Reserved
+        </p>
+        <ul class="footer-list">
+            <li>
+                <a href="#" class="footer-link" id="termsLink">Terms & Conditions</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link" id="privacyLink">Privacy Policy</a>
+            </li>
+        </ul>
     </div>
-  </footer>
+</footer>
+
+<!-- Pop-up for Terms & Conditions -->
+<div id="termsPopup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Terms & Conditions</h2>
+        <p>
+            Welcome to Shankar Aryal's website. By accessing this website, you agree to comply with and be bound by the following terms and conditions of use.
+        </p>
+        <p>
+            The content of this website is for your general information and use only. It is subject to change without notice.
+        </p>
+        <p>
+            Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.
+        </p>
+        <!-- Add more terms as needed -->
+    </div>
+</div>
+
+<!-- Pop-up for Privacy Policy -->
+<div id="privacyPopup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Privacy Policy</h2>
+        <p>
+            Your privacy is important to us. It is Shankar Aryal's policy to respect your privacy regarding any information we may collect from you across our website.
+        </p>
+        <p>
+            We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we're collecting it and how it will be used.
+        </p>
+        <p>
+            We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we'll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.
+        </p>
+        <!-- Add more privacy policy details as needed -->
+    </div>
+</div>
+
+<script>
+    // Get the modal elements
+    var termsPopup = document.getElementById("termsPopup");
+    var privacyPopup = document.getElementById("privacyPopup");
+
+    // Get the button that opens the modal
+    var termsLink = document.getElementById("termsLink");
+    var privacyLink = document.getElementById("privacyLink");
+
+    // Get the <span> elements that close the modals
+    var closeButtons = document.getElementsByClassName("close");
+
+    // When the user clicks on the button, open the modal
+    termsLink.onclick = function(e) {
+        e.preventDefault();
+        termsPopup.style.display = "block";
+    }
+
+    privacyLink.onclick = function(e) {
+        e.preventDefault();
+        privacyPopup.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].onclick = function() {
+            termsPopup.style.display = "none";
+            privacyPopup.style.display = "none";
+        }
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == termsPopup) {
+            termsPopup.style.display = "none";
+        }
+        if (event.target == privacyPopup) {
+            privacyPopup.style.display = "none";
+        }
+    }
+</script>
 
 
 
