@@ -268,7 +268,42 @@
         }
 
 
-  
+        .blog-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .blog-card {
+            background-color: var(--midnight-blue);
+            border-radius: var(--radius-10);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-card-content {
+            padding: 20px;
+        }
+        .blog-card h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        .blog-card p {
+            color: var(--cadet-blue-crayola);
+            margin-bottom: 15px;
+        }
+        .blog-card .read-more {
+            color: var(--orange-soda);
+            text-decoration: none;
+            font-weight: bold;
+        }
 
 </style>
 </head>
@@ -313,10 +348,10 @@
           <li>
             <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
           </li>
-        <!--
+        
           <li>
             <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-          </li> -->
+          </li> 
         <!--
            <li>
             <a href="#" class="btn btn-primary">Download CV</a>
@@ -912,14 +947,106 @@
       </section>
    
       -->
+      <section class="section blog" id="blog">
+        <div class="container">
+            <h2 class="h2 section-title">My Blog</h2>
+            <div class="blog-list">
+                <!-- Blog post cards will be dynamically inserted here -->
+            </div>
+            <button id="toggleButton" class="toggle-button">Show More Blogs</button>
+        </div>
+    </section>
+
     </article>
   </main>
 
+  <script>
+    // Sample blog post data
+    const blogPosts = [
+        {
+            title: "The Future of Web Development with founder of LearnMe",
+            summary: "Beign a founder of LearnMe.At LearnMe, we believe knowledge is the gateway to possibility.",
+            image: "assets/blog-img/blog-learnme-1.png",
+            url: "blog-post/blog1.html"
+        },
+        {
+            title: "सपनाको क्यानभास",
+            summary: "शंकर अयार्ल दर्रा लेखित  विलानेल संरचनाको ढाँचामा उपस्थित 'सपनाको क्यानभास' कवितामा जीवनको पीडा र मृत्युका विषयमा छलफल गरिएको छ।",
+            image: "assets/blog-img/poem-11.png",
+            url: "blog-post/blog2.html"
+        },
+        {
+            title: " Network security threats with Quantum Shield",
+            summary: "QuantumShield is designed with machine learning, quantum-inspired algorithms, and  insider threats, and complex, multi-stage cyber intrusions. ",
+            image: "assets/blog-img/quntaimg.png",
+            url: "blog-post/blog3.html"
+        },
+        {
+            title: "काग्",
+            summary: "शंकर अयार्ल दर्रा लेखित विलानेल संरचनाको ढाँचामा उपस्थित 'काग्' कविताले जीवन र मृत्युबीचको सम्बन्धलाई प्रस्तुत गर्छ।  ",
+            image: "assets/blog-img/crow.jpg",
+            url: "blog-post/blog4.html"
+        },
+        {
+           title: "चिहानले पुकार छ?",
+           summary: "शंकर अयार्ल द्वारा लेखिएको 'चिहानले पुकार छ?' कविता मध्यरातको अंधकारमा जीवन र मृत्युको विचमा स्थापित एक मौन संवादलाई उजागर गर्दछ। यसले याद र वियोगको गहिराइमा खोतल्दै चिहानको पुकार र मानव हृदयको अधूरापनको बीचको द्वन्द्वलाई चित्रित गर्दछ।",
+            image: "assets/blog-img/chihan-cut.jpg",
+            url: "blog-post/blog5.html"
+        },
+        {
+            title: "Cryto Guard",
+            summary: "Encryption and Decrytion AES",
+            image: "assets/blog-img/cryptoguard.png",
+            url: "blog-post/blog6.html"
+        }
+        // Add more blog post objects here
+    ];
 
+    let showingAll = false;
 
+    // Function to create blog post cards
+    function createBlogCards() {
+        const blogList = document.querySelector('.blog-list');
+        blogList.innerHTML = ''; // Clear current content
+        
+        // Determine how many posts to display
+        const postsToShow = showingAll ? blogPosts.length : 3;
 
+        // Loop through the posts and create cards
+        for (let i = 0; i < postsToShow; i++) {
+            const post = blogPosts[i];
+            const card = document.createElement('div');
+            card.className = 'blog-card';
+            card.innerHTML = `
+                <img src="${post.image}" alt="${post.title}">
+                <div class="blog-card-content">
+                    <h3>${post.title}</h3>
+                    <p>${post.summary}</p>
+                    <a href="${post.url}" class="read-more">Read More</a>
+                </div>
+            `;
+            blogList.appendChild(card);
+        }
 
-  
+        // Update button text based on the current state
+        const toggleButton = document.getElementById('toggleButton');
+        toggleButton.textContent = showingAll ? 'Show Less Blogs' : 'Show More Blogs';
+    }
+
+    // Function to handle the button click
+    function toggleBlogs() {
+        showingAll = !showingAll;
+        createBlogCards();
+    }
+
+    // Call the function when the page loads
+    window.addEventListener('load', () => {
+        createBlogCards();
+
+        // Add event listener to the button
+        document.getElementById('toggleButton').addEventListener('click', toggleBlogs);
+    });
+</script>
 
   <!-- 
     - #FOOTER
