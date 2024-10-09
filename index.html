@@ -725,7 +725,82 @@
         - #CONTACT
       -->
 
- <script>
+
+
+      <section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <p class="card-subtitle">Don't be shy</p>
+      <h2 class="h2 section-title">Drop Me a Line</h2>
+      <div class="wrapper">
+        <form id="contactForm" class="contact-form">
+          <input type="text" name="name" placeholder="Name" required class="contact-input" minlength="2" maxlength="50">
+          <input type="email" name="email" placeholder="Email" required class="contact-input">
+          <textarea name="message" placeholder="Message" required class="contact-input" minlength="10" maxlength="500"></textarea>
+          <button type="submit" class="btn-submit">Submit Message</button>
+        </form>
+        <!-- pop up-->
+        <div id="toast" class="toast">
+          <div class="toast-content">
+            <span class="toast-icon">✉️</span>
+            <span id="toastMessage" class="toast-message"></span>
+            <button class="toast-close">&times;</button>
+          </div>
+        </div>
+          <ul class="contact-list">
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <ion-icon name="location"></ion-icon>
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Address</h3>
+
+                    <address class="contact-item-link">
+                      Gaindakot-5,Nawalpur-E,Nepal
+                    </address>
+                  </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <ion-icon name="mail"></ion-icon>
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Email</h3>
+
+                    <a href="mailto:mr.aryalcode@gmail.com" class="contact-item-link">mr.aryalcode@gamil.com</a>
+                  </div>
+
+                </li>
+ <!--
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <ion-icon name="call"></ion-icon>
+                  </div>
+ 
+                  <div>
+                    <h3 class="contact-item-title">Phone</h3>
+
+                    <a href="tel:+97749358048" class="contact-item-link">+977-9749358048</a>
+                  </div>
+                  
+                </li>
+-->
+
+              </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
   const toast = document.getElementById("toast");
   const toastMessage = document.getElementById("toastMessage");
   const toastClose = document.querySelector(".toast-close");
@@ -786,69 +861,6 @@
     });
   }
 </script>
-
-        
-
-
-              <ul class="contact-list">
-
-                <li class="contact-item">
-
-                  <div class="contact-icon">
-                    <ion-icon name="location"></ion-icon>
-                  </div>
-
-                  <div>
-                    <h3 class="contact-item-title">Address</h3>
-
-                    <address class="contact-item-link">
-                      Gaindakot-5,Nawalpur-E,Nepal
-                    </address>
-                  </div>
-
-                </li>
-
-                <li class="contact-item">
-
-                  <div class="contact-icon">
-                    <ion-icon name="mail"></ion-icon>
-                  </div>
-
-                  <div>
-                    <h3 class="contact-item-title">Email</h3>
-
-                    <a href="mailto:mr.aryalcode@gmail.com" class="contact-item-link">mr.aryalcode@gamil.com</a>
-                  </div>
-
-                </li>
- <!--
-                <li class="contact-item">
-
-                  <div class="contact-icon">
-                    <ion-icon name="call"></ion-icon>
-                  </div>
- 
-                  <div>
-                    <h3 class="contact-item-title">Phone</h3>
-
-                    <a href="tel:+97749358048" class="contact-item-link">+977-9749358048</a>
-                  </div>
-                  
-                </li>
--->
-
-              </ul>
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-
-
 
       <!-- 
      
