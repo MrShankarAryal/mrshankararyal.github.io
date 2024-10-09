@@ -725,89 +725,105 @@
         - #CONTACT
       -->
 
-      <section class="section contact" id="contact">
-        <div class="container">
-
-          <div class="contact-card">
-
-            <p class="card-subtitle">Don't be shy</p>
-
-            <h2 class="h2 section-title">Drop Me a Line</h2>
-
-            <div class="wrapper">
-
-              <form action="https://my-vercel-project-shankar.vercel.app/api/contact" method="POST"class="contact-form" id="contactForm"  >
-                <!--https://<your-vercel-project-id>.vercel.app/api/contact
-                <form action="https://formspree.io/f/xgvwkgdz" method="POST"class="contact-form">-->
-                <input type="text" name="name" placeholder="Name" required class="contact-input">
-
-                <input type="email" name="email" placeholder="Email" required class="contact-input">
-
-                <textarea name="message" placeholder="Message" required class="contact-input"></textarea>
-
-                <button type="submit" class="btn-submit">Submit Message</button>
-
-              </form>
-               <!-- pop up-->
- <div id="toast" class="toast">
-        <div class="toast-content">
+    <section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <p class="card-subtitle">Don't be shy</p>
+      <h2 class="h2 section-title">Drop Me a Line</h2>
+      <div class="wrapper">
+        <form id="contactForm" class="contact-form">
+          <input type="text" name="name" placeholder="Name" required class="contact-input" minlength="2" maxlength="50">
+          <input type="email" name="email" placeholder="Email" required class="contact-input">
+          <textarea name="message" placeholder="Message" required class="contact-input" minlength="10" maxlength="500"></textarea>
+          <button type="submit" class="btn-submit">Submit Message</button>
+        </form>
+        <!-- pop up-->
+        <div id="toast" class="toast">
+          <div class="toast-content">
             <span class="toast-icon">✉️</span>
             <span id="toastMessage" class="toast-message"></span>
             <button class="toast-close">&times;</button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</section>
 
-  <script>
-        const toast = document.getElementById("toast");
-        const toastMessage = document.getElementById("toastMessage");
-        const toastClose = document.querySelector(".toast-close");
-
-        function showToast(message, duration = 5000) {
-            toastMessage.textContent = message;
-            toast.classList.add("show");
-
-            setTimeout(() => {
-                hideToast();
-            }, duration);
-        }
-
-        function hideToast() {
-            toast.classList.remove("show");
-        }
-
-        toastClose.onclick = hideToast;
-
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            fetch('https://my-vercel-project-shankar.vercel.app/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                showToast(data.message);
-                this.reset(); // Reset the form after successful submission
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showToast('An error occurred while submitting the form. Please try again.');
-            });
-        });
-    </script>
-
-
+<script>
+  const toast = document.getElementById("toast");
+  const toastMessage = document.getElementById("toastMessage");
+  const toastClose = document.querySelector(".toast-close");
+  
+  function showToast(message, duration = 5000) {
+    toastMessage.textContent = message;
+    toast.classList.add("show");
+    setTimeout(() => {
+      hideToast();
+    }, duration);
+  }
+  
+  function hideToast() {
+    toast.classList.remove("show");
+  }
+  
+  toastClose.onclick = hideToast;
+  
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Basic client-side validation
+    if (data.name.length < 2 || data.name.length > 50) {
+      showToast('Name should be between 2 and 50 characters.');
+      return;
+    }
+    if (data.message.length < 10 || data.message.length > 500) {
+      showToast('Message should be between 10 and 500 characters.');
+      return;
+    }
+    
+    // Get geolocation
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        data.geolocation = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+        sendFormData(data);
+      }, function(error) {
+        console.error("Error getting geolocation:", error);
+        data.geolocation = "Geolocation not available";
+        sendFormData(data);
+      });
+    } else {
+      data.geolocation = "Geolocation not supported";
+      sendFormData(data);
+    }
+  });
+  
+  function sendFormData(data) {
+    fetch('https://my-vercel-project-shankar.vercel.app/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      showToast(data.message);
+      document.getElementById('contactForm').reset(); // Reset the form after successful submission
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      showToast('An error occurred while submitting the form. Please try again.');
+    });
+  }
+</script>
               <ul class="contact-list">
 
                 <li class="contact-item">
