@@ -502,87 +502,225 @@ body {
 /*-----------------------------------*\
   #CONTACT
 \*-----------------------------------*/
-
-.contact-card {
-  background-color: var(--midnight-blue);
-  padding: 50px 25px;
-  border-radius: var(--radius-20);
+.section.contact{
+  font-family: 'Poppins', sans-serif;
+    background-color: var(--space-cadet);
+    color: var(--white);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow-x: hidden;
 }
 
-.contact-card .card-subtitle {
-  color: var(--orange-soda);
-  font-family: var(--ff-barlow);
-  font-size: var(--fs-4);
-  font-weight: var(--fw-600);
-}
-
-.contact .section-title {
-  text-align: left;
-  margin-block-end: 30px;
-}
-
-.contact-form { margin-block-end: 50px; }
-
-.contact-input {
-  background-color: var(--white);
-  color: var(--manatee);
-  border-radius: var(--radius-5);
-  padding: 15px 25px;
-  font-size: var(--fs-5);
-  margin-block-end: 15px;
-}
-
-.contact-input::placeholder { color: inherit; }
-
-textarea.contact-input {
-  resize: vertical;
-  min-height: 100px;
-  height: 180px;
-  max-height: 300px;
-}
-
-.btn-submit {
-  background-color: var(--orange-soda);
-  color: var(--white);
-  font-family: var(--ff-barlow);
-  font-size: var(--fs-5);
+.section.contact .container-newc {
   width: 100%;
-  padding: 10px;
-  border-radius: var(--radius-5);
-  transition: var(--transition-2);
-}
-
-.btn-submit:is(:hover, :focus) {
-  background-color: var(--white);
-  color: var(--black);
-}
-
-.contact-item {
+  max-width: 1000px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   display: flex;
-  align-items: center;
-  gap: 15px;
+  box-sizing: border-box;
+  padding-inline: 0px;
 }
 
-.contact-item:not(:last-child) { margin-block-end: 20px; }
 
-.contact-icon {
-  background-color: var(--glaucous);
-  font-size: 2.4rem;
-  padding: 20px;
-  border-radius: 50%;
+
+
+.section.contact .form-container {
+    flex: 1;
+    padding: 3rem;
 }
 
-.contact-item-title {
-  color: var(--white);
-  font-family: var(--ff-barlow);
-  font-size: var(--fs-4);
-  font-weight: var(--fw-600);
+.info-container {
+    flex: 1;
+    background-color: var(--midnight-blue);
+   padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  
 }
 
-.contact-item-link { transition: var(--transition-1); }
+.section.contact h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--orange-soda);
+}
 
-.contact-item-link:not(address):is(:hover, :focus) { color: var(--white); }
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
 
+label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: var(--manatee);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--glaucous);
+    border-radius: 10px;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus,
+input:not(:placeholder-shown), textarea:not(:placeholder-shown) {
+    border-color: var(--orange-soda);
+    outline: none;
+}
+
+input:focus + label, textarea:focus + label,
+input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label {
+    top: -0.5rem;
+    left: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+    background-color: var(--space-cadet);
+    border-radius: 4px;
+}
+
+.section.contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.section.contact button {
+    background-color: var(--orange-soda);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.section.contact button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.section.contact button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.info-item a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: var(--orange-soda);
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--orange-soda);
+}
+
+.error {
+    color: var(--orange-soda);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.toast {
+    position: fixed;
+    top: 2rem;  /* Changed from bottom to top */
+    right: 2rem;
+    background-color: var(--glaucous);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-100%);  /* Changed from 100% to -100% */
+    transition: all 0.5s ease;
+    z-index: 1000;  /* Ensure it's above other elements */
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .section.contact .container-newc {
+        flex-direction: column;
+        
+    }
+
+    .form-container, .info-container {
+        padding: 2rem;
+    }
+}
+
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.animated-bg span {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: move 7s linear infinite;
+    bottom: -150px;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
 
 
 
