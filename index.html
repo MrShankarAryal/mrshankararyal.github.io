@@ -429,10 +429,17 @@
 
 
   <div class="social-bar">
-    <a href="https://github.com/mrshankararyal" target="_blank" class="github"><i class="fab fa-github"></i></a>
+  <!--  <a href="https://github.com/mrshankararyal" target="_blank" class="github"><i class="fab fa-github"></i></a>
     <a href="https://www.linkedin.com/in/shankar-aryal-b18a80333" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
     <a href="https://www.facebook.com/ShankarAryal01" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
     <a href="https://www.instagram.com/mrshankararyal/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+-->
+
+ <a href="https://github.com/mrshankararyal" target="_blank" class="github" aria-label="Shankar Aryal GitHub Profile"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/shankar-aryal-b18a80333" target="_blank" class="linkedin" aria-label="Shankar Aryal LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.facebook.com/ShankarAryal01" target="_blank" class="facebook" aria-label="Shankar Aryal Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/mrshankararyal/" target="_blank" class="instagram" aria-label="Shankar Aryal Instagram Profile"><i class="fab fa-instagram"></i></a>
+
 </div>
 
 
@@ -984,42 +991,48 @@
   <script>
     // Sample blog post data
     const blogPosts = [
-        {
-            title: "The Future of Web Development with founder of LearnMe",
-            summary: "Beign a founder of LearnMe.At LearnMe, we believe knowledge is the gateway to possibility.",
-            image: "assets/blog-img/blog-learnme-1.png",
-            url: "blog-post/blog1.html"
-        },
-        {
-            title: "सपनाको क्यानभास",
-            summary: "शंकर अयार्ल दर्रा लेखित  विलानेल संरचनाको ढाँचामा उपस्थित 'सपनाको क्यानभास' कवितामा जीवनको पीडा र मृत्युका विषयमा छलफल गरिएको छ।",
-            image: "assets/blog-img/poem-11.png",
-            url: "blog-post/blog2.html"
-        },
-        {
-            title: " Network security threats with Quantum Shield",
-            summary: "QuantumShield is designed with machine learning, quantum-inspired algorithms, and  insider threats, and complex, multi-stage cyber intrusions. ",
-            image: "assets/blog-img/quntaimg.png",
-            url: "blog-post/blog3.html"
-        },
-        {
-            title: "काग्",
-            summary: "शंकर अयार्ल दर्रा लेखित विलानेल संरचनाको ढाँचामा उपस्थित 'काग्' कविताले जीवन र मृत्युबीचको सम्बन्धलाई प्रस्तुत गर्छ।  ",
-            image: "assets/blog-img/crow.jpg",
-            url: "blog-post/blog4.html"
-        },
-        {
-           title: "चिहानले पुकार छ?",
-           summary: "शंकर अयार्ल द्वारा लेखिएको 'चिहानले पुकार छ?' कविता मध्यरातको अंधकारमा जीवन र मृत्युको विचमा स्थापित एक मौन संवादलाई उजागर गर्दछ। यसले याद र वियोगको गहिराइमा खोतल्दै चिहानको पुकार र मानव हृदयको अधूरापनको बीचको द्वन्द्वलाई चित्रित गर्दछ।",
-            image: "assets/blog-img/chihan-cut.jpg",
-            url: "blog-post/blog5.html"
-        },
-        {
-            title: "Cryto Guard",
-            summary: "Encryption and Decrytion AES",
-            image: "assets/blog-img/cryptoguard.png",
-            url: "blog-post/blog6.html"
-        }
+         {
+        title: "The Future of Web Development with founder of LearnMe",
+        summary: "Being a founder of LearnMe. At LearnMe, we believe knowledge is the gateway to possibility.",
+        image: "assets/blog-img/blog-learnme-1.png",
+        url: "blog-post/blog1.html",
+        linkText: "Read more about the Future of Web Development"
+    },
+    {
+        title: "सपनाको क्यानभास",
+        summary: "शंकर अयार्ल द्वारा लेखिएको 'सपनाको क्यानभास' कवितामा जीवनको पीडा र मृत्युका विषयमा छलफल गरिएको छ।",
+        image: "assets/blog-img/poem-11.png",
+        url: "blog-post/blog2.html",
+        linkText: "Read the full poem - सपनाको क्यानभास"
+    },
+    {
+        title: "Network security threats with Quantum Shield",
+        summary: "QuantumShield is designed with machine learning, quantum-inspired algorithms, and insider threats, and complex, multi-stage cyber intrusions.",
+        image: "assets/blog-img/quntaimg.png",
+        url: "blog-post/blog3.html",
+        linkText: "Learn more about Network security threats with Quantum Shield"
+    },
+    {
+        title: "काग्",
+        summary: "शंकर अयार्ल द्वारा लेखिएको 'काग्' कविताले जीवन र मृत्युबीचको सम्बन्धलाई प्रस्तुत गर्छ।",
+        image: "assets/blog-img/crow.jpg",
+        url: "blog-post/blog4.html",
+        linkText: "Read the full poem - काग्"
+    },
+    {
+        title: "चिहानले पुकार छ?",
+        summary: "शंकर अयार्ल द्वारा लेखिएको 'चिहानले पुकार छ?' कविता, जीवन र मृत्युको बीचको मौन संवादलाई उजागर गर्दछ।",
+        image: "assets/blog-img/chihan-cut.jpg",
+        url: "blog-post/blog5.html",
+        linkText: "Discover the poem - चिहानले पुकार छ?"
+    },
+    {
+        title: "Crypto Guard",
+        summary: "Encryption and Decryption using AES.",
+        image: "assets/blog-img/cryptoguard.png",
+        url: "blog-post/blog6.html",
+        linkText: "Learn more about Crypto Guard's AES Encryption"
+    }
         // Add more blog post objects here
     ];
 
