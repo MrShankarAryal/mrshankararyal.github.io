@@ -545,7 +545,7 @@ body {
   
 }
 
-.section.contact h1 {
+.section.contact  .get-conn-a .h1-get {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -1216,3 +1216,13 @@ input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label 
   .footer-list { margin-inline: 0; }
 
 }
+
+
+        .logo-h1 ,#h1-hero {
+  font-size: 2.125rem; /* Same as the typical h1 size */
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0; /* Remove any unwanted margins */
+  padding: 0;
+}
+
