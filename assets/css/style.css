@@ -1218,11 +1218,12 @@ input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label 
 }
 
 
-        .logo-h1 ,#h1-hero {
+        .logo-h1 {
   font-size: 2.125rem; /* Same as the typical h1 size */
   font-weight: bold;
   line-height: 1.2;
   margin: 0; /* Remove any unwanted margins */
   padding: 0;
+color: white;
 }
 
