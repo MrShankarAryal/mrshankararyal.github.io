@@ -366,6 +366,7 @@
     .navbar.container {
         opacity: 1;
     }
+    
 </style>
 </head>
 
@@ -378,8 +379,8 @@
   <header class="header" data-header>
     <div class="container">
 
-      <a href="#">
-        <h1 class="logo">Shankar</h1>
+     <a href="#">
+        <div class="logo-h1" >Shankar</div>
       </a>
 
       <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
@@ -478,10 +479,14 @@
 
           <div class="hero-content">
 
-            <h1 class="hero-title">
+         <!--   <h1 class="hero-title">
               <span>Hello I'm</span>
               <strong>Shankar Aryal</strong> 
-            </h1>
+            </h1> -->
+                <div class="hero-title" id="h1-hero">
+              <span>Hello I'm</span>
+              <h1><strong>Shankar Aryal</strong></h1> 
+            </div>
 
             <p class="hero-text">
            I'm currently an Electrical Engineering student as well as a web developer and Python Enthusiast.
@@ -786,7 +791,9 @@
       <section class="section contact" id="contact">
         <div class="container-newc">
           <div class="form-container">
-            <h1>Get in Touch</h1>
+           <!-- <h1>Get in Touch</h1> -->
+            <div class="get-conn-a"><span class="h1-get">Get in Touch<span></span></div>
+
             <form id="contactForm">
               <div class="form-group">
                 <input type="text" id="name" name="name" placeholder=" " required>
