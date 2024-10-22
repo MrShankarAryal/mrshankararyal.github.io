@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
     <style>
+        :root {
+            --primary: hsl(230, 84%, 63%);
+            --primary-dark: hsl(230, 84%, 53%);
+            --secondary: hsl(260, 84%, 63%);
+            --background: hsl(230, 30%, 10%);
+            --text: hsl(230, 30%, 95%);
+            --text-muted: hsl(230, 20%, 80%);
+            --shadow: hsla(230, 84%, 63%, 0.2);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,202 +22,346 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
-            padding: 1rem;
+            display: grid;
+            place-items: center;
+            background: var(--background);
+            color: var(--text);
+            overflow: hidden;
+            perspective: 1000px;
         }
 
         .container {
-            max-width: 32rem;
-            width: 100%;
+            max-width: 40rem;
+            padding: 2rem;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .error-code {
-            font-size: 9rem;
-            font-weight: 700;
-            color: #1e293b;
-            line-height: 1;
+        .glitch-wrapper {
+            position: relative;
             margin-bottom: 2rem;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .glitch {
+            font-size: 10rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--text);
+            position: relative;
             animation: float 6s ease-in-out infinite;
         }
 
-        .error-code span {
-            color: #3b82f6;
+        .glitch::before,
+        .glitch::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            background: var(--background);
+        }
+
+        .glitch::before {
+            left: 3px;
+            text-shadow: -2px 0 var(--primary);
+            animation: glitch-1 3s infinite linear;
+        }
+
+        .glitch::after {
+            left: -3px;
+            text-shadow: 2px 0 var(--secondary);
+            animation: glitch-2 2s infinite linear;
         }
 
         .title {
-            font-size: 2rem;
-            color: #1e293b;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            animation: titleFloat 4s ease-in-out infinite;
+        }
+
+        .title::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: transparent;
+            z-index: -1;
+            filter: blur(24px);
+            opacity: 0.5;
         }
 
         .description {
-            color: #64748b;
-            margin-bottom: 2rem;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
         }
 
         .buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
-            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-out 0.5s backwards;
         }
 
         .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: none;
-            font-size: 1rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease-out;
+        }
+
+        .btn:hover::before {
+            transform: translate(-50%, -50%) scale(1);
         }
 
         .btn-primary {
-            background: #3b82f6;
-            color: white;
+            background: var(--primary);
+            color: var(--text);
+            box-shadow: 0 8px 16px var(--shadow);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
         }
 
         .btn-primary:hover {
-            background: #2563eb;
+            transform: translateY(-5px) perspective(1000px) rotateX(10deg);
+            box-shadow: 0 12px 20px var(--shadow);
+            background: var(--primary-dark);
         }
 
         .btn-secondary {
-            background: #f1f5f9;
-            color: #1e293b;
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--text-muted);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
         }
 
         .btn-secondary:hover {
-            background: #e2e8f0;
+            transform: translateY(-5px) perspective(1000px) rotateX(10deg);
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
-        .support {
-            margin-top: 2rem;
-            font-size: 0.875rem;
-            color: #64748b;
+        .geometric-box {
+            position: absolute;
+            border-radius: 2rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            opacity: 0.1;
+            filter: blur(40px);
+            z-index: -1;
+            transition: all 0.3s ease;
         }
 
-        .support a {
-            color: #3b82f6;
-            text-decoration: none;
+        #box1 { 
+            top: -15%; 
+            right: -10%; 
+            width: 40rem; 
+            height: 40rem;
+            animation: floatBox1 15s ease-in-out infinite;
         }
 
-        .support a:hover {
-            text-decoration: underline;
+        #box2 { 
+            bottom: -20%; 
+            left: -15%; 
+            width: 35rem; 
+            height: 35rem;
+            animation: floatBox2 18s ease-in-out infinite;
+        }
+
+        @keyframes glitch-1 {
+            0% { clip-path: inset(40% 0 61% 0); }
+            20% { clip-path: inset(92% 0 1% 0); }
+            40% { clip-path: inset(43% 0 1% 0); }
+            60% { clip-path: inset(25% 0 58% 0); }
+            80% { clip-path: inset(54% 0 7% 0); }
+            100% { clip-path: inset(58% 0 43% 0); }
+        }
+
+        @keyframes glitch-2 {
+            0% { clip-path: inset(24% 0 29% 0); }
+            20% { clip-path: inset(54% 0 21% 0); }
+            40% { clip-path: inset(73% 0 86% 0); }
+            60% { clip-path: inset(46% 0 3% 0); }
+            80% { clip-path: inset(49% 0 35% 0); }
+            100% { clip-path: inset(14% 0 67% 0); }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            0%, 100% { transform: translateY(0) rotateX(0); }
+            50% { transform: translateY(-20px) rotateX(5deg); }
         }
 
-        /* Particles animation */
-        .particles {
-            position: fixed;
-            top: 0;
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes floatBox1 {
+            0%, 100% { transform: translate(0) rotate(0deg); }
+            50% { transform: translate(-30px, 30px) rotate(10deg); }
+        }
+
+        @keyframes floatBox2 {
+            0%, 100% { transform: translate(0) rotate(0deg); }
+            50% { transform: translate(30px, -30px) rotate(-10deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .support {
+            color: var(--text-muted);
+            animation: fadeIn 1s ease-out 1s backwards;
+        }
+
+        .support a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .support a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
             left: 0;
             width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+            height: 2px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease-out;
         }
 
-        .particle {
-            position: absolute;
-            background: #3b82f6;
-            border-radius: 50%;
-            opacity: 0.3;
+        .support a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
-        /* Added styles for disabled state */
-        .btn[disabled] {
-            opacity: 0.6;
-            cursor: not-allowed;
+        @media (max-width: 768px) {
+            .glitch { font-size: 6rem; }
+            .title { font-size: 2rem; }
+            .description { font-size: 1rem; }
+            .buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
+    <div class="geometric-box" id="box1"></div>
+    <div class="geometric-box" id="box2"></div>
+    
     <div class="container">
-        <h1 class="error-code">4<span>0</span>4</h1>
-        <h2 class="title">Page Not Found</h2>
-        <p class="description">Sorry, the page you're looking for doesn't exist or has been moved.</p>
+        <div class="glitch-wrapper">
+            <h1 class="glitch">404</h1>
+        </div>
+        
+        <h2 class="title" data-text="Page Not Found">Page Not Found</h2>
+        <p class="description">Oops! The page you're looking for seems to have doesn't exist or has been moved on by admin Shankar Aryal.</p>
         
         <div class="buttons">
             <button id="backButton" class="btn btn-secondary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
                 Go Back
             </button>
-            <a href="https://mrshankararyal.github.io/index.html" class="btn btn-primary">Return Home</a>
+            <a href="https://mrshankararyal.github.io/index.html" class="btn btn-primary">
+                Return Home
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+            </a>
         </div>
 
         <p class="support">
-            If you think this is a mistake, please 
-            <a href="https://mrshankararyal.github.io/index.html#contact">contact support</a>
+            Need help? 
+            <a href="https://mrshankararyal.github.io/index.html#contact">Contact our support team</a>
         </p>
     </div>
 
     <script>
-        // Improved back button functionality
         document.addEventListener('DOMContentLoaded', function() {
             const backButton = document.getElementById('backButton');
-            
-            // Check if there's history to go back to
             if (window.history.length <= 1) {
                 backButton.disabled = true;
                 backButton.title = "No previous page available";
             }
-
             backButton.addEventListener('click', function() {
-                // Check if we can go back
                 if (window.history.length > 1) {
                     window.history.back();
                 } else {
-                    // If we can't go back, redirect to home
                     window.location.href = '/';
                 }
             });
+
+            // Enhanced parallax effect
+            document.addEventListener('mousemove', function(e) {
+                const boxes = document.querySelectorAll('.geometric-box');
+                const glitch = document.querySelector('.glitch-wrapper');
+                
+                const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+                boxes.forEach((box, index) => {
+                    const depth = (index + 1) * 20;
+                    const translateX = mouseX * depth;
+                    const translateY = mouseY * depth;
+                    box.style.transform = `translate(${translateX}px, ${translateY}px)`;
+                });
+
+                glitch.style.transform = `translate(${mouseX * 10}px, ${mouseY * 10}px) rotateX(${mouseY * 5}deg) rotateY(${mouseX * 5}deg)`;
+            });
         });
-
-        // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Random size between 4 and 8 pixels
-                const size = Math.random() * 4 + 4;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // Random position
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                
-                // Random animation
-                const duration = Math.random() * 20 + 10;
-                particle.style.animation = `float ${duration}s infinite`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Initialize particles on load
-        window.addEventListener('load', createParticles);
     </script>
 </body>
 </html>
