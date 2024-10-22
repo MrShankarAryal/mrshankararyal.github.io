@@ -500,7 +500,7 @@
             </p>
 
             <div class="btn-group">
-              <a href="#contact" class="btn btn-primary blue">Get a Quote</a>
+              <a href="#contact" class="btn btn-primary blue">Get Contact</a>
 
               <a href="#about" class="btn">About Me</a>
             </div>
@@ -550,14 +550,14 @@
             <h2 class="h2 section-title">I am developing my skills in these areas.</h2>
 
             <p class="section-text">
-             To be a student is to be forever curious. To be a developer is to forever create. I am both, and in this intersection, I find my purpose. My journey in technology has been driven by a curiosity to understand how things work and a desire to create innovative solutions where logic dances with simplicity. In the dance between hardware and software, I find the rhythm of modern technology. As both an electrical engineer and developer, I choreograph this intricate performance. In the realm of electrical engineering and coding, I am not just building circuits and programs; I am crafting the foundation of tomorrow's innovations. 
+             To be a student is to be forever curious. To be a developer is to forever create. I am both, and in this intersection, I find my purpose. My journey in technology has been driven by a curiosity to understand how things work and a desire to create innovative solutions where logic dances with simplicity. In the dance between hardware and software, I find the rhythm of modern technology. As both an electrical engineer and developer, I choreograph this intricate performance.  
             </p>
 
             <p class="section-text">
-              “The best way to predict the future is to invent it.” – Alan Kay
+              In the realm of electrical engineering and coding, I am not just building circuits and programs; I am crafting the foundation of tomorrow's innovations.
             </p>
 
-            <a href="#portfolio" class="btn btn-primary blue">View Portfolio</a>
+           
 
           </div>
 
@@ -566,6 +566,118 @@
 
 
 
+      <section class="section-edu education" id="education">
+        <div class="container-edu">
+            <p class="section-subtitle-edu fade-in">Background</p>
+            <h2 class="section-title-edu fade-in">Education & Experience</h2>
+            <div class="animated-line"></div>
+            <div class="timeline-container">
+                <!-- Education Timeline -->
+                <div class="timeline-column">
+                    <h3 class="timeline-heading slide-up">Education</h3>
+                    
+                    <div class="timeline-item slide-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Bachelor of Electrical Engineering</h3>
+                            <h4>Khwopa College fF Engineering (TU)</h4>
+                            <p>Currently pursuing with focus on Power Systems and Control Engineering</p>
+                            <ul class="timeline-achievements">
+                                <li>Phython Programming</li>
+                                <li>DataTyping</li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="timeline-item slide-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2021 - 2023</div>
+                        <div class="timeline-content">
+                            <h3>School- +2 Computer Science</h3>
+                            <h4>GNamuna Secondary School</h4>
+                            <p>Graduated with 3.62 GPA</p>
+                            <ul class="timeline-achievements">
+                                <li>Science Exhibition First Runner up</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Experience Timeline -->
+                <div class="timeline-column">
+                    <h3 class="timeline-heading slide-up">Experience</h3>
+                    
+                    <div class="timeline-item slide-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Full Stack Developer</h3>
+                            <h4>LearnMe Educational Platform</h4>
+                            <p>Founded and developed comprehensive e-learning platform</p>
+                            <ul class="timeline-achievements">
+                                <li>Developed full-stack web application using modern technologies</li>
+                                <li>Implemented secure user authentication system</li>
+                                <li>Created interactive learning modules</li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="timeline-item slide-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>Web Development Intern</h3>
+                            <h4>TechSolutions Nepal</h4>
+                            <p>Worked on various client projects and internal tools</p>
+                            <ul class="timeline-achievements">
+                                <li>Built responsive websites for clients</li>
+                                <li>Optimized database queries improving performance by 40%</li>
+                                <li>Contributed to team's coding standards documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple intersection observer for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe all timeline items
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'all 0.5s ease';
+                observer.observe(item);
+            });
+
+            // Add hover effects
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const dot = item.querySelector('.timeline-dot');
+                    if (dot) dot.style.transform = 'scale(1.5)';
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    const dot = item.querySelector('.timeline-dot');
+                    if (dot) dot.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
 
 
       <!-- 
