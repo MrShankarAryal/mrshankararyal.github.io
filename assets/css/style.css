@@ -36,6 +36,9 @@
   --rufous: hsl(2, 85%, 35%);
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
+ 
+
+  --timeline-dot-size: 1rem;
 
   /**
    * typography
@@ -1227,3 +1230,219 @@ input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label 
 color: white;
 }
 
+
+
+.animated-line {
+  width: 0; /* Start from 0 to animate */
+  height: 4px;
+  background-color:var(--orange-soda); /* Professional green tone */
+  margin: 10px auto;
+  border-radius: 4px;
+  transition: width 0.8s ease-in-out;
+}
+
+/* On hover or load, line expands */
+.container-edu:hover .animated-line, .container-edu.fade-in .animated-line {
+  width: 80%; /* Expand to 80% width */
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+.section-edu.education .container-edu {
+  max-width: 1200px;
+  margin: 0rem auto 0;
+
+  padding: 0rem 2rem 0 2rem;
+  
+
+}
+
+
+.section-subtitle-edu {
+  text-align: center;
+  color: var(--fiery-rose);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.section-title-edu {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color:var(--white);
+}
+
+.timeline-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 2rem 0;
+}
+
+.timeline-column {
+  position: relative;
+}
+
+.timeline-heading {
+  font-size: 2.75rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  color: var(--glaucous);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 3.4rem;
+  border-left: 2px solid #e5e7eb;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -0.5rem;
+  top: 0;
+  width: var(--timeline-dot-size);
+  height: var(--timeline-dot-size);
+  background-color: var(--glaucous);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(var(--timeline-dot-size) * 2);
+  height: calc(var(--timeline-dot-size) * 2);
+  border-radius: 50%;
+  border: 2px solid var(--glaucous);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.timeline-date {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background-color: var(--glaucous);
+  color: white;
+  border-radius: 6px;
+  font-size: 1.375rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content {
+  background-color:   rgba(255, 255, 255, 0.05);
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content h3 {
+  font-size: 1.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--glaucous);
+}
+
+.timeline-content h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color:var(--orange-soda);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-content p {
+  font-size: 1.35rem;
+
+  color:var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.timeline-achievements {
+  list-style-type: none;
+  padding-left: 0;
+  color:var(--manatee);
+}
+
+.timeline-achievements li {
+  margin-bottom: 0.75rem;
+  font-size: 1.225rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.timeline-achievements li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--glaucous);
+  transition: transform 0.3s ease;
+}
+
+.timeline-achievements li:hover::before {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+  }
+
+  .section-title-edu {
+      font-size: 2rem;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
