@@ -293,7 +293,13 @@
             .buttons { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
         }
+        
     </style>
+
+    <script>            window.onerror = function(message, source, lineno, colno, error) {
+        // Redirect to your custom error page
+        window.location.href = "/500.html";
+    }</script>
 </head>
 <body>
     <div class="geometric-box" id="box1"></div>
