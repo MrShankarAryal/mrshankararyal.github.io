@@ -723,7 +723,12 @@ justify-content: center;
                     <div class="blog-card-content">
                         <h3>${post.title}</h3>
                         <p>${post.summary}</p>
-                        <a href="${post.url}" class="read-more">Read More</a>
+                        <a 
+                    href="${post.url}" 
+                    class="read-more" 
+                    target="_blank" 
+                    aria-label="Read full article about ${post.title}"
+                >Read More</a>
                     </div>
                 `;
                 blogList.appendChild(card);
