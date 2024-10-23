@@ -10,7 +10,7 @@
   <!-- SEO Meta Tags -->
  <title>काग् कविता || शंकर अयार्ल </title>
 <meta name="description" content="शंकर अयार्लको विलानेल संरचनामा आधारित 'काग्' कविता, जीवन र मृत्युको सम्बन्धलाई गहिरो भावमा प्रस्तुत गर्ने उत्कृष्ट रचना।">
-<meta name="keywords" content="काग्, काग् कविता, Crow poem, शंकर अयार्ल, Nepali poem, Shankar Aryal, विलानेल कविता, जीवन र मृत्यु, नेपाली साहित्य, कवि शंकर अयार्ल">
+<meta name="keywords" content="काग्, काग् कविता, Crow poem, शंकर अयार्ल, Nepali poem, Shankar Aryal, विलानेल कविता, कवि शंकर अयार्ल">
 <meta property="og:title" content="काग् कविता ||  शंकर अयार्ल द्वारा जीवन र मृत्युको कवितात्मक प्रस्तुति" />
 <meta property="og:description" content="शंकर अयार्लको विलानेल संरचनामा आधारित 'काग्' कविता, जीवन र मृत्युको सम्बन्धलाई गहिरो भावमा प्रस्तुत गर्ने उत्कृष्ट रचना।" />
   <meta property="og:url" content="https://mrshankararyal.github.io/blog-post/blog4.html" />
@@ -717,7 +717,12 @@ justify-content: center;
                     <div class="blog-card-content">
                         <h3>${post.title}</h3>
                         <p>${post.summary}</p>
-                        <a href="${post.url}" class="read-more">Read More</a>
+                        <a 
+                    href="${post.url}" 
+                    class="read-more" 
+                    target="_blank" 
+                    aria-label="Read full article about ${post.title}"
+                >Read More</a>
                     </div>
                 `;
                 blogList.appendChild(card);
