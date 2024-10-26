@@ -2135,20 +2135,87 @@ margin-bottom: 5rem;
     }
   }
 
-  /* Container and Layout */
-  .container-hero {
+  .hero {
+    min-height: 100vh;
+    background: var(--space-cadet);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+
+.container-hero {
     position: relative;
     z-index: 2;
     width: min(1400px, 90%);
-    margin-inline: auto;
-    margin-top: 10px;
-  }
+    margin: 0 auto; /* Changed from 10px auto 0 to center properly */
+    padding: 0; /* Removed default padding that could cause offset */
+}
 
-  .hero-wrapper {
+.hero-wrapper {
     display: grid;
     gap: clamp(4rem, 6vw, 8rem);
     align-items: center;
-  }
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Enhanced mobile optimizations */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 15rem;
+        width: 100%; /* Changed from 100vw to avoid potential scrollbar issues */
+        margin: 0;
+        left: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .hero-wrapper {
+        padding: 0;
+        width: 100%;
+        margin: 0 auto; /* Added auto margins for centering */
+    }
+
+    .container-hero {
+        width: 100%; /* Changed from 90% to full width */
+        padding: 0 20px; /* Consistent padding on both sides */
+        margin: 0 auto; /* Center the container */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center; /* Optional: if you want centered text */
+    }
+
+    
+}
+
+/* Specific fixes for iPhone 11 Pro */
+@media only screen 
+and (device-width: 375px) 
+and (device-height: 812px) 
+and (-webkit-device-pixel-ratio: 3) {
+    .hero {
+        width: 100%;
+        padding: 15rem 0 0 0; /* Simplified padding */
+        overflow-x: hidden;
+    }
+
+    .container-hero {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .hero-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
 
   /* Desktop Layout */
   @media (min-width: 992px) {
@@ -2511,11 +2578,6 @@ margin-bottom: 5rem;
       scroll-behavior: auto !important;
     }
   }
-
-
-
-
-
 
 
 
