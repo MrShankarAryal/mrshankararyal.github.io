@@ -1557,14 +1557,6 @@ color: white;
 }
 
 
-
-
-
-
-.navbar.container {
-  opacity: 1;
-}
-
 :root {
   --primary:  hsl(7, 96%, 61%);
   --primary-light: #818cf8;
@@ -1888,7 +1880,7 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   justify-content: center;
   opacity: 0;
   transition: all 0.3s ease;
-  z-index: 10;
+  z-index: 2;
   font-size: 1.25rem;
 }
 
@@ -2572,7 +2564,8 @@ margin-bottom: 5rem;
     border-radius: 50px;
     transition: var(--transition-2);
     text-decoration: none;
-
-
-
   }
+
+.navbar.container {
+  opacity: 1;
+}
