@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <url>
+        <loc>https://mrshankararyal.github.io/#home</loc>
+        <image:image>
+            <image:loc>https://mrshankararyal.github.io/assets/images/hero-banner.jpg</image:loc>
+            <image:caption>Shankar Aryal</image:caption>
+            <image:title>Shankar Aryal Profile Image</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://mrshankararyal.github.io/#about</loc>
+        <image:image>
+            <image:loc>https://mrshankararyal.github.io/assets/images/about-banner.jpg</image:loc>
+            <image:caption>About Shankar Aryal</image:caption>
+            <image:title>Shankar Aryal Electrical Enginer</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://mrshankararyal.github.io/#about</loc>
+        <image:image>
+            <image:loc>https://mrshankararyal.github.io/assets/images/absolute-image.jpg</image:loc>
+            <image:caption>Image of Shankar Aryal</image:caption>
+            <image:title>Shankar Aryal Enjoying</image:title>
+        </image:image>
+    </url>
+
+</urlset>
