@@ -15,7 +15,6 @@ for (let i = 0; i < navbarLinks.length; i++) {
   });
 }
 const backTopBtn = document.querySelector("[data-back-to-top]");
-const header = document.querySelector("header"); 
 
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 100) {
@@ -26,4 +25,3 @@ window.addEventListener("scroll", function () {
     backTopBtn.classList.remove("active");
   }
 });
-
