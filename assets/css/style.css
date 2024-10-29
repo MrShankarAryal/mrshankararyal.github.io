@@ -1040,6 +1040,7 @@ and (-webkit-device-pixel-ratio: 3) {
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color:var(--white);
+  font-weight: bold;
 }
 
 .timeline-container {
@@ -2038,6 +2039,7 @@ input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label 
   text-decoration: none;
   font-weight: bold;
 }
+
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
@@ -2374,4 +2376,23 @@ input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label 
 
 .navbar.container {
   opacity: 1;
+}
+
+
+.hero-description{
+  display: inline;
+}
+
+#my-h2-mode {
+  display: inline;
+  font-size: inherit; /* Adjust font size if you want the text inline-sized */
+  font-weight: bold; /* Optional: customize to match your heading style */
+  font-weight: normal;
+
+}
+
+.h2-footer{
+  font-weight: bold;
+  font-size: large;
+  padding-bottom: 0.5rem;
 }
