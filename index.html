@@ -83,35 +83,6 @@
 </script>
 
 
-    <script>
-        (function() {
-            var currentURL = window.location.href;
-            console.log("Current URL: ", currentURL); // Log the current URL
-            var newURL = currentURL;
-
-            // Check for 'www.' in the URL
-            if (currentURL.startsWith('http://www.') || currentURL.startsWith('https://www.')) {
-                console.log("Detected 'www.' in URL. Redirecting to non-'www' version.");
-                // Create the new URL without 'www'
-                newURL = currentURL.replace('www.', '');
-            }
-
-            // Check if the URL starts with 'http://'
-            if (newURL.startsWith('http://')) {
-                console.log("Detected 'http://'. Upgrading to 'https://'.");
-                // Upgrade to 'https://'
-                newURL = newURL.replace('http://', 'https://');
-            }
-
-            // Redirect to the new URL if it's different
-            if (currentURL !== newURL) {
-                console.log("Redirecting to: ", newURL); // Log the new URL
-                window.location.href = newURL;
-            } else {
-                console.log("No redirection needed."); // Log if no redirection occurs
-            }
-        })();
-    </script>
 
 
 
