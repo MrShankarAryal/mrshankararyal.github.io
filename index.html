@@ -15,6 +15,7 @@
     content="Shankar Aryal, Electrical Engineering, Full Stack Developer, Python Expert, portfolio,  Blogs, LearnMe, CryptoGuard, QuantumShield, ShadowStrike">
   <meta name="author" content="Shankar Aryal">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mrshankararyal.github.io/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -82,14 +83,15 @@
 </script>
 
 <script>
-    (function() {
-        var currentURL = window.location.href;
-        if (currentURL.includes('www.mrshankararyal.github.io')) {
-            window.location.href = currentURL.replace('www.mrshankararyal.github.io', 'mrshankararyal.github.io');
-        }
-    })();
-</script>
-<link rel="canonical" href="https://mrshankararyal.github.io/">
+        (function() {
+            var currentURL = window.location.href;
+            if (currentURL.includes('www.mrshankararyal.github.io')) {
+                var newURL = currentURL.replace('www.', '');
+                window.location.href = newURL;
+            }
+        })();
+    </script>
+
 
  
   <!-- 
