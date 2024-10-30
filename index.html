@@ -82,14 +82,35 @@
 }
 </script>
 
-<script>
-        (function() {
-            var currentURL = window.location.href;
-            if (currentURL.includes('www.mrshankararyal.github.io')) {
-                var newURL = currentURL.replace('www.', '');
-                window.location.href = newURL;
+  <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Debug logging
+            console.log('Current URL:', window.location.href);
+            
+            try {
+                // Get the current hostname
+                var hostname = window.location.hostname;
+                console.log('Hostname:', hostname);
+
+                // Check if hostname contains 'www.'
+                if (hostname.startsWith('www.')) {
+                    // Construct new URL
+                    var newURL = window.location.protocol + '//' + 
+                               hostname.replace('www.', '') + 
+                               window.location.pathname + 
+                               window.location.search + 
+                               window.location.hash;
+                    
+                    console.log('Redirecting to:', newURL);
+                    window.location.replace(newURL);
+                } else {
+                    console.log('No redirect needed');
+                }
+            } catch (error) {
+                console.error('Redirect error:', error);
             }
-        })();
+        });
     </script>
 
 
