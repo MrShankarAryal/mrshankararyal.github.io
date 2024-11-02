@@ -1,6 +1,13 @@
 // Enhanced blog post data with tags
 const blogPosts = [
     {
+        title: "ShadowStrike: Advanced Network Security Testing",
+        summary: "Empowering Ethical Hackers with Cutting-Edge Network Security Tools",
+        image: "../assets/blog-img/sstrike.avif",
+        url: "blog7.html",
+        tags: ["Network Security", "Ethical Hacking", "programming"]
+    },
+    {
         title: "The Future of Web Development",
         summary: "Exploring emerging trends and technologies shaping the web.",
         image: "../assets/blog-img/blog-learnme-1.png",
