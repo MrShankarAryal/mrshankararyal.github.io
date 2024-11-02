@@ -1,0 +1,2391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- Primary Meta Tags -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShadowStrike: Advanced Network Security Testing Tool | Educational Security Framework</title>
+<meta name="title" content="ShadowStrike: Advanced Network Security Testing Tool | Educational Security Framework">
+<meta name="description" content="Explore ShadowStrike, an educational network security testing framework featuring advanced reconnaissance, adaptive attack simulation, and comprehensive logging capabilities for ethical security testing.">
+<meta name="keywords" content="ShadowStrike, network security testing, ethical hacking, security education, penetration testing, cybersecurity tools, network reconnaissance, security framework, educational security tool">
+<meta name="author" content="Shankar Aryal">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mrshankararyal.github.io/blog-post/blog7.html">
+<meta property="og:title" content="ShadowStrike: Advanced Network Security Testing Tool | Educational Security Framework">
+<meta property="og:description" content="Explore ShadowStrike, an educational network security testing framework featuring advanced reconnaissance, adaptive attack simulation, and comprehensive logging capabilities for ethical security testing.">
+<meta property="og:image" content="https://mrshankararyal.github.io/assets/images/port8(1).png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Shankar Aryal - Security Tools">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Shankar Aryal">
+<meta property="article:published_time" content="2024-11-02T00:00:00+00:00">
+<meta property="article:section" content="Security Tools">
+<meta property="article:tag" content="Network Security">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://mrshankararyal.github.io/blog-post/blog7.html">
+<meta name="twitter:title" content="ShadowStrike: Advanced Network Security Testing Tool | Educational Security Framework">
+<meta name="twitter:description" content="Explore ShadowStrike, an educational network security testing framework featuring advanced reconnaissance, adaptive attack simulation, and comprehensive logging capabilities for ethical security testing.">
+<meta name="twitter:image" content="https://mrshankararyal.github.io/assets/images/port8(1).png">
+
+<!-- Schema.org markup for Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mrshankararyal.github.io/blog-post/blog7.html"
+  },
+  "headline": "ShadowStrike: Advanced Network Security Testing Tool",
+  "description": "Comprehensive guide to ShadowStrike, an educational network security testing framework with features for reconnaissance, attack simulation, and security assessment.",
+  "image": "https://mrshankararyal.github.io/assets/images/port8(1).png",
+  "author": {
+    "@type": "Person",
+    "name": "Shankar Aryal",
+    "url": "https://mrshankararyal.github.io"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shankar Aryal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mrshankararyal.github.io/favicon.ico"
+    }
+  },
+  "datePublished": "2024-11-02T00:00:00+00:00",
+  "dateModified": "2024-11-02T00:00:00+00:00",
+  "keywords": "network security, ethical hacking, penetration testing, security education, cybersecurity tools",
+  "articleSection": "Security Tools",
+  "technicalLevel": "Advanced"
+}
+</script>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://mrshankararyal.github.io/blog-post/blog7.html">
+
+<!-- Favicon -->
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/blogstyle.css">
+  <style>
+    
+      
+        
+      
+      
+        .blog-post .content {
+            color: var(--white);
+            line-height: 1.6;
+        }
+        .blog-post .content p {
+            margin-bottom: 20px;
+        }
+
+        .blogs-contains .header-content {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-bottom: 2em;
+        }
+        
+        .blogs-contains .section h2 {
+            color: #4a90e2;
+          
+        }
+        .blogs-contains .section h3 {
+            color: #5a6772;
+        }
+        .blogs-contains .author-info {
+            font-style: italic;
+           
+        }
+        .blogs-contains .section{
+            padding: 0.5rem;
+        }
+        .blogs-contains.blog-list{
+justify-content: center;
+     }
+
+
+
+
+
+
+     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #3366ff;
+    --secondary-color: #2ecc71;
+    --background-dark: #0f1020;
+    --background-light: #cacee4c5;
+    --text-dark: #080808;
+    --text-light: #f4f4f6;
+    --card-bg:   rgba(255, 255, 255, 0.05);
+    --primary: #3366ff;
+    --warning: #ff6b6b;
+    --success: #2ecc71;
+    --info: #4dabf7;
+}
+
+
+
+.blogs-contains {
+    font-family: 'Inter', sans-serif;
+  padding-top: 7rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.blogs-contains .container-blog  {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.blogs-contains .header-blog  {
+    background: linear-gradient(135deg, var(--primary-color), #5a7fff);
+    color: var(--text-light);
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: 0rem 1rem 5rem 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.blogs-contains .header-blog ::before {
+    content: '';
+    position: absolute;
+    
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent 50%);
+}
+
+.blogs-contains .header-blog h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3.7rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px var(--card-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+
+.feature-card i {
+    color:  hsl(7, 96%, 61%);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.code-section {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    border-radius: 12px;
+    padding: 3.5rem;
+    margin: 2rem 0;
+}
+
+.code-section pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+    line-height: 2.6;
+    overflow-x: auto;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, var(--secondary-color), #2ab673);
+    color: white;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 16px;
+    margin: 2rem 0;
+    
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--secondary-color);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: larger;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+
+.faq-section {
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px var(--card-shadow);
+
+background-color:   rgba(255, 255, 255, 0.05);;
+}
+
+.faq-item {
+    background-color: var(--background-light);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+    .header-blog h1 {
+        font-size: 2rem;
+    }
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.slider-container {
+    width: 100%;
+    max-width: 587px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    aspect-ratio: 587/587;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+.slider-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.slider-dot.active {
+    background-color: white;
+    width: 20px;
+    border-radius: 10px;
+    border-color: var(--primary-color);
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.slider-container:hover .slider-button {
+    opacity: 1;
+}
+
+.slider-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-button.prev {
+    left: 20px;
+}
+
+.slider-button.next {
+    right: 20px;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: rgba(51, 102, 255, 0.3);
+    width: 100%;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0;
+    transition: width 0.1s linear;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slider-container {
+        border-radius: 16px;
+    }
+
+    .slider-button {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .slider-controls {
+        bottom: 15px;
+        gap: 8px;
+        padding: 6px 12px;
+    }
+
+    .slider-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .slider-dot.active {
+        width: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        border-radius: 12px;
+    }
+
+    .slider-button {
+        width: 32px;
+        height: 32px;
+        opacity: 1;
+    }
+
+    .slider-button.prev {
+        left: 10px;
+    }
+
+    .slider-button.next {
+        right: 10px;
+    }
+
+    .slider-controls {
+        bottom: 10px;
+        gap: 6px;
+        padding: 4px 10px;
+    }
+}
+.slider-part{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.box-cont{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+hr{
+    color: var(--primary-color);
+}
+
+
+
+.doc-card {
+    background: var(--background-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.module-tree {
+    background: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+   
+}
+
+.documentation-section {
+    background:   rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 24px var(--card-shadow);
+}
+
+.documentation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+.documentation-section h2 {
+color: whitesmoke;
+margin-bottom: 1.5rem;
+border-bottom: 2px solid var(--primary-color);
+padding-bottom: 0.5rem;
+font-size: 2.2rem;
+}
+
+.documentation-section h3 {
+    color: whitesmoke;
+
+margin: 2rem 0 1rem;
+font-size: 2rem;
+border-left: 4px solid var(--primary-color);
+padding-left: 1rem;
+}
+
+.documentation-section h4 {
+color:  var(--text-dark);
+margin: 1.5rem 0 0.75rem;
+font-size: 1.6rem;
+}
+.documentation-section h4#core{
+    color: rgba(245, 245, 245, 0.785);
+}
+.documentation-section h5{
+    color: whitesmoke;
+    font-size: medium;
+}
+
+.code-block {
+background: var(--background-dark);
+color: var(--text-light);
+padding: 1.5rem;
+border-radius: 8px;
+font-family: 'JetBrains Mono', monospace;
+font-size: 1.2rem;
+overflow-x: auto;
+margin: 1rem 0;
+line-height: 1.6;
+}
+.arch{
+    color: rgba(245, 245, 245, 0.785) !important;
+}
+.technical-notes {
+background: #f8f9faaf;
+border-left: 4px solid var(--secondary-color);
+padding: 1rem 1.5rem;
+margin: 1rem 0;
+border-radius: 0 8px 8px 0;
+}
+
+.api-endpoint {
+background:   rgba(255, 255, 255, 0.05);
+padding: 1rem;
+border-radius: 8px;
+margin: 1rem 0;
+}
+
+.api-endpoint .method {
+background: var(--primary-color);
+color: white;
+padding: 0.25rem 0.75rem;
+border-radius: 10px;
+font-weight: 600;
+margin-right: 0.5rem;
+}
+
+.parameter-table {
+width: 100%;
+border-collapse: collapse;
+margin: 1rem 0;
+}
+
+.parameter-table th,
+.parameter-table td {
+padding: 0.75rem;
+border: 1px solid hsl(243, 23%, 18%);
+background-color:  hsl(230, 52%, 63%);;
+text-align: left;
+}
+code#urlLoc{
+    color: rgba(245, 245, 245, 0.844);
+}
+
+.parameter-table th {
+background: hsl(222, 88%, 55%);
+font-weight: 600;
+}
+
+.implementation-example {
+margin: 2rem 0;
+padding: 1.5rem;
+background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(90px);
+border-radius: 8px;
+}
+
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .blogs-contains.container {
+max-width: 1140px;
+}
+
+.blogs-contains.header h1 {
+font-size: 3.5rem;
+}
+
+.feature-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+
+/* Large devices (desktops, 992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .blogs-contains .container {
+max-width: 960px;
+}
+
+.blogs-contains .header h1 {
+font-size: 3rem;
+}
+
+.feature-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+
+.documentation-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .blogs-contains .container {
+max-width: 720px;
+padding: 1.5rem;
+}
+
+.blogs-contains .header {
+padding: 3rem 1.5rem;
+}
+
+.blogs-contains .header h1 {
+font-size: 2.5rem;
+}
+
+.feature-grid {
+grid-template-columns: repeat(2, 1fr);
+gap: 1.25rem;
+}
+
+.documentation-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.feature-card {
+padding: 1.5rem;
+}
+
+.slider-container {
+max-width: 100%;
+}
+}
+
+/* Small devices (landscape phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .blogs-contains .container {
+max-width: 540px;
+padding: 1rem;
+}
+
+.blogs-contains .header {
+padding: 2.5rem 1rem;
+border-radius: 12px;
+}
+
+.blogs-contains .header h1 {
+font-size: 2rem;
+}
+
+.feature-grid {
+grid-template-columns: 1fr;
+gap: 1rem;
+}
+
+.documentation-grid {
+grid-template-columns: 1fr;
+}
+
+.feature-card i {
+font-size: 2rem;
+}
+
+.cta-section {
+padding: 2rem 1rem;
+}
+
+.documentation-section {
+padding: 1.5rem;
+}
+
+.code-block {
+padding: 1rem;
+font-size: 1.1rem;
+}
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+        .blogs-contains .container {
+    padding: 0.75rem;
+    }
+
+    .blogs-contains .header {
+    padding: 2rem 0.75rem;
+    border-radius: 8px;
+    }
+
+    .blogs-contains .header h1 {
+    font-size: 1.75rem;
+    }
+
+    .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    }
+
+    .feature-card {
+    padding: 2.25rem;
+    }
+
+    .feature-card:hover {
+    transform: translateY(-5px);
+    }
+
+    .documentation-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    }
+
+    .cta-section {
+    padding: 1.5rem 0.75rem;
+    border-radius: 8px;
+    }
+
+    .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    }
+
+    .faq-section {
+    padding: 1.25rem;
+        }
+
+    .faq-item {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    width: 100%; }
+
+    /* Adjust preformatted text */
+    .faq-item pre {
+    white-space: pre-wrap; /* Allows preformatted text to wrap on small screens */
+    word-wrap: break-word; /* Further ensures text wraps within the container */
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+    }
+
+
+    .documentation-section {
+    padding: 1.25rem;
+    margin: 1rem 0;
+    }
+
+    .documentation-section h2 {
+    font-size: 2.2rem;
+    }
+
+    .documentation-section h3 {
+    font-size: 1.2rem;
+    margin: 1.25rem 0 0.75rem;
+    }
+
+    .code-block {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    }
+
+    .parameter-table th,
+    .parameter-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    }
+
+    /* Slider adjustments for mobile */
+    .slider-container {
+    border-radius: 8px;
+    max-width: 100%;
+    }
+
+    .slider-button {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    }
+
+    .slider-controls {
+    bottom: 8px;
+    gap: 4px;
+    padding: 4px 8px;
+    }
+
+    .slider-dot {
+    width: 6px;
+    height: 6px;
+    }
+
+    .slider-dot.active {
+    width: 12px;
+    }
+    
+.code-block {
+padding:0.2rem;
+font-size: 1rem;
+}
+.documentation-section h3{
+    font-size: 2rem;
+}
+}
+
+
+.warning-box {
+    background: #fff3f3;
+    border-left: 4px solid var(--warning);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.info-box {
+    background: #f8f9fa;
+    border-left: 4px solid var(--info);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.step-box {
+    background: var(--card-bg);
+    border-left: 3px solid var(--primary-color);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+.step-box h1 {
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 0.5rem;
+}
+
+.step-box h2 {
+    color: var(--primary);
+    margin-top: 2rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
+}
+
+.step-box  h3 {
+    color: #555;
+    margin-top: 1.5rem;
+}
+
+.step {
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.blogs-contains ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.blogs-contains ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.blogs-contains ul li::before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.attack-mode {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    border-left: 4px solid var(--info);
+}
+
+.best-practice {
+    background:    rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    border: 1px solid    rgba(255, 255, 255, 0.05);
+}
+#or-down{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+ font-size: 1.5rem;    
+}
+#or{
+    color: #2ab673;
+   padding-bottom: 1rem;
+   text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+
+.warning-overlay {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(17, 24, 39, 0.7);
+backdrop-filter: blur(50px);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 1000;
+padding: 1rem;
+overflow-y: auto;
+min-height: 100vh;
+opacity: 0;
+animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes slideUp {
+from { 
+transform: translateY(20px);
+opacity: 0;
+}
+to { 
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+.warning-popup {
+background: hsl(243, 23%, 18%);
+border-radius: 16px;
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+width: 90%;
+max-width: 550px;
+margin: auto;
+position: relative;
+animation: slideUp 0.4s ease-out forwards;
+}
+
+.popup-header {
+position: sticky;
+top: 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1.25rem;
+background:   rgba(255, 255, 255, 0.05);
+border-bottom: 1px solid #e2e8f0;
+border-radius: 16px 16px 0 0;
+z-index: 1;
+}
+
+.warning-overlay .title {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+font-size: 2rem;
+font-weight: 700;
+color: whitesmoke;
+}
+
+.warning-overlay .title-icon {
+padding: 0.5rem;
+border-radius: 8px;
+font-size: 2.5rem;
+color: #dc2626;
+}
+
+.warning-overlay .close-btn {
+border: none;
+cursor: pointer;
+font-size: 2.2rem;
+border-radius: 6px;
+color: #64748b;
+transition: all 0.2s;
+}
+
+.warning-overlay .close-btn:hover {
+color: hsl(7, 96%, 61%);
+}
+
+.warning-overlay .warning-content {
+padding: 1.25rem;
+max-height: calc(100vh - 200px);
+overflow-y: auto;
+}
+
+.warning-overlay .warning-box {
+background: linear-gradient(to right, #fef2f2, #fff1f2);
+border-left: 4px solid #dc2626;
+border-radius: 8px;
+padding: 1rem;
+margin-bottom: 1.25rem;
+display: flex;
+align-items: start;
+gap: 0.75rem;
+}
+
+.warning-overlay .warning-box-icon {
+background: #fee2e2c5;
+padding: 0.5rem;
+border-radius: 6px;
+color: #dc2626;
+flex-shrink: 0;
+}
+
+.warning-overlay .warning-box-content {
+flex: 1;
+}
+
+.warning-overlay .warning-box-content strong {
+display: block;
+color: #dc2626;
+margin-bottom: 0.25rem;
+}
+
+.warning-overlay .warning-box-content p {
+color: #64748b;
+line-height: 1.5;
+}
+
+.warning-overlay .considerations {
+padding: 1.25rem;
+background: rgba(255, 255, 255, 0.05);
+border-radius: 8px;
+margin-bottom: 1.25rem;
+}
+
+.warning-overlay .considerations h3 {
+font-weight: 600;
+color: #f4f5f8;
+margin-bottom: 1rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.warning-overlay .considerations ul {
+list-style: none;
+margin-bottom: 1rem;
+}
+
+.warning-overlay .considerations li {
+margin-bottom: 0.75rem;
+padding-left: 1.5rem;
+position: relative;
+color: #f3f5f7;
+line-height: 1.5;
+}
+
+.warning-overlay .considerations li::before {
+content: "•";
+color: #3b82f6;
+position: absolute;
+left: 0;
+font-weight: bold;
+}
+
+.warning-overlay .disclaimer {
+font-size: 0.995rem;
+color: hsl(240, 10%, 70%);
+line-height: 1.5;
+margin-bottom: 1.25rem;
+padding: 1rem;
+background: rgba(255, 255, 255, 0.05);
+border-radius: 6px;
+}
+
+.warning-overlay .actions {
+position: sticky;
+bottom: 0;
+display: flex;
+gap: 1rem;
+padding: 1.25rem;
+background: rgba(255, 255, 255, 0.05);
+border-top: 1px solid #e2e8f0;
+border-radius: 0 0 16px 16px;
+z-index: 1;
+}
+
+.warning-overlay .btn {
+flex: 1;
+padding: 0.75rem 1.5rem;
+border-radius: 8px;
+cursor: pointer;
+font-weight: 600;
+font-size: 1.375rem;
+transition: all 0.2s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+
+}
+
+.warning-overlay .btn-accept {
+background: #2563eb;
+color: white;
+border: none;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-accept:hover {
+background: #1dd8a3;
+transform: translateY(-1px);
+}
+
+.btn-decline {
+background: white;
+color: #475569;
+border: 1px solid #e2e8f0;
+}
+
+.btn-decline:hover {
+background: #c30c37;
+border-color: #d20b4e;
+color: whitesmoke;
+}
+
+.hidden {
+display: none;
+}
+
+
+
+.icon-shield {
+background: #ecfdf5;
+padding: 1rem;
+border-radius: 50%;
+width: 64px;
+height: 64px;
+margin: 0 auto 1.5rem;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+@media (max-width: 640px) {
+.warning-overlay {
+padding: 2rem 0.5rem;
+
+}
+
+.warning-overlay .warning-popup {
+width: 100%;
+margin: 0;
+border-radius: 0;
+max-height: 90vh; 
+}
+.warning-overlay .popup-header,
+.actions {
+padding: 1rem;
+}
+.warning-overlay .warning-content {
+max-height: calc(100vh - 180px);
+}
+
+.warning-overlay .actions {
+flex-direction: column;
+}
+
+.warning-overlay .btn {
+width: 100%;
+}
+}
+
+/* Custom scrollbar */
+.warning-content::-webkit-scrollbar {
+width: 8px;
+}
+
+.warning-content::-webkit-scrollbar-track {
+background: #f1f5f9;
+border-radius: 4px;
+}
+
+.warning-content::-webkit-scrollbar-thumb {
+background: #cbd5e1;
+border-radius: 4px;
+}
+
+.warning-content::-webkit-scrollbar-thumb:hover {
+background: #94a3b8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Updated color palette for better contrast */
+  --bg-primary: hsl(243, 23%, 18%);
+  --bg-secondary: hsl(225, 24%, 27%);
+  --bg-elevated: hsl(225, 24%, 32%);
+  
+  --text-primary: hsl(0, 0%, 100%);
+  --text-secondary: hsl(240, 10%, 90%);
+  --text-muted: hsl(240, 10%, 80%);
+  
+  --accent-primary: hsl(222, 88%, 65%);
+  --accent-secondary: hsl(353, 83%, 65%);
+  --accent-warning: hsl(32, 95%, 65%);
+  
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Main Container */
+.UserDoc {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+/* Section Styling */
+.faq-section {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Headings */
+.faq-section h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--accent-primary);
+  letter-spacing: -0.02em;
+}
+
+.faq-section h3 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+.faq-section h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+}
+
+
+
+
+.faq-section .step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 0.75rem;
+}
+
+/* Lists */
+.faq-section ul {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.faq-section ul li {
+  position: relative;
+  margin: 0.75rem 0;
+  color: var(--text-secondary);
+}
+
+.faq-section ul li::before {
+  content: "•";
+  color: var(--accent-primary);
+  position: absolute;
+  left: -1.25rem;
+  font-weight: bold;
+}
+
+
+
+.faq-section code {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  color: var(--accent-secondary);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Download Button */
+.faq-section .cta-button {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 1.25rem 0;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  gap: 0.5rem;
+}
+
+.faq-section .cta-button:hover {
+  background: hsl(222, 88%, 70%);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Info Box */
+.faq-section .info-box {
+  background: rgba(var(--accent-primary), 0.1);
+  border: 1px solid var(--accent-primary);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  color: var(--text-secondary);
+}
+
+/* Best Practices Section */
+.faq-section .best-practice {
+  background: var(--bg-elevated);
+  padding: 1.75rem;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+}
+
+.faq-section .best-practice h3 {
+  color: var(--accent-primary);
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+/* FAQ Items */
+.faq-section .faq-item {
+  background: var(--bg-elevated);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-item h4 {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+/* Highlights */
+.highlight {
+  color: var(--accent-secondary);
+  font-weight: 500;
+}
+
+/* Box Container */
+.box-cont {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.box-cont hr {
+  flex: 1;
+  border: none;
+  height: 2px;
+  background: var(--border-medium);
+}
+
+/* Attack Mode Styling */
+.attack-mode {
+  background: var(--bg-primary);
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.attack-mode ul li strong {
+  color: var(--accent-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .UserDoc {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .faq-section {
+    padding: 1.5rem;
+  }
+
+  .faq-section  h2 {
+    font-size: 1.75rem;
+  }
+
+  .faq-section  h3 {
+    font-size: 1.3rem;
+  }
+
+  .faq-section .step-box, .faq-item, .faq-section .best-practice {
+    padding: 1.25rem;
+  }
+
+ 
+}
+
+/* Print Styles */
+@media print {
+
+
+  .faq-section {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .warning-box, .info-box, .step-box {
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+}
+
+.warning-box .ul-warn{
+    color: #080808;
+}
+
+       
+</style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="../index.html#home">
+        <div class="logo-h1" >Shankar</div>
+      </a>
+   
+
+      <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon"></ion-icon>
+      </button>
+
+      <nav class="navbar container">
+        <ul class="navbar-list">
+
+          <li>
+            <a href="../index.html#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="../index.html#about" class="navbar-link" data-nav-link>About</a>
+          </li>
+
+          <li>
+            <a href="../index.html#portfolio-section-port" class="navbar-link" data-nav-link>Portfolio</a>
+          </li>
+
+          <li>
+            <a href="../index.html#skills" class="navbar-link" data-nav-link>Skills</a>
+          </li>
+
+          <li>
+            <a href="../index.html#contact" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+        
+          <li>
+            <a href="../index.html#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li> 
+        <!--
+           <li>
+            <a href="#" class="btn btn-primary">Download CV</a>
+          </li>
+        -->
+         
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <div class="social-bar">
+    <a href="https://github.com/mrshankararyal" target="_blank" class="github"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/yourusername" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.facebook.com/ShankarAryal01" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/mrshankararyal/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+</div>
+
+
+
+
+  <main class="blogs-contains">
+    <article>
+        <div id="warningPopup" class="warning-overlay">
+            <div class="warning-popup">
+                <div class="popup-header">
+                    <div class="title">
+                        <span class="title-icon">⚠️</span>
+                        Important Security Notice
+                    </div>
+                    <button class="close-btn" onclick="handleDecline()">✕</button>
+                </div>
+    
+                <div class="warning-content">
+                    <div class="warning-box">
+                        <div class="warning-box-icon">🛡️</div>
+                        <div class="warning-box-content">
+                            <strong>Security Warning</strong>
+                            <p>ShadowStrike is designed exclusively for educational purposes and ethical security testing.</p>
+                        </div>
+                    </div>
+    
+                    <div class="considerations">
+                        <h3>
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            Legal and Ethical Requirements
+                        </h3>
+                        <ul>
+                            <li>Use ShadowStrike only in authorized testing environments with explicit permission</li>
+                            <li>Maintain proper documentation and obtain necessary approvals before testing</li>
+                            <li>Follow industry-standard responsible disclosure practices for vulnerabilities</li>
+                        </ul>
+                    </div>
+    
+                    <div class="disclaimer">
+                        By clicking "I Accept & Continue", you acknowledge your understanding and agreement to use this tool
+                        solely for legitimate educational and authorized testing purposes.
+                    </div>
+                </div>
+    
+                <div class="actions">
+                    <button class="btn btn-accept" onclick="handleAccept()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4-4-4-4" />
+                        </svg>
+                        I Accept & Continue
+                    </button>
+                    <button class="btn btn-decline" onclick="handleDecline()">Decline Access</button>
+                </div>
+            </div>
+        </div>
+    
+       
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const termsAccepted = localStorage.getItem('termsAccepted');
+                if (termsAccepted === 'true') {
+                    showWelcomeMessage();
+                }
+            });
+    
+            function handleAccept() {
+                localStorage.setItem('termsAccepted', 'true');
+                showWelcomeMessage();
+            }
+    
+            function handleDecline() {
+                alert('Access denied. You must accept the terms to continue.');
+            }
+    
+            function showWelcomeMessage() {
+                const popup = document.getElementById('warningPopup');
+                
+                
+                popup.style.opacity = '0';
+                setTimeout(() => {
+                    popup.classList.add('hidden');
+                   
+                }, 300);
+            }
+        </script>
+    
+    
+        <div class="container-blog">
+            <header class="header-blog">
+                <h1 id="Blog-title">ShadowStrike: Advanced Network Security Testing</h1>
+                <p>Empowering Ethical Hackers with Cutting-Edge Network Security Tools</p>
+            </header>
+    
+    
+    
+           
+    <section class="slider-part"
+    >
+            <div class="slider-container" id="sliderContainer">
+                <div class="slider" id="imageSlider">
+                    <div class="slide active">
+                        <img src="../assets/images/port8(1).png" alt="Screenshot 1" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/images/port8(3).png" alt="Screenshot 2" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/images/port8(2).png" alt="Screenshot 3" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/images/port8(4).png" alt="Screenshot 4" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/images/port8(5).png" alt="Screenshot 5" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                    <div class="slider-dot" data-slide="3"></div>
+                    <div class="slider-dot" data-slide="4"></div>
+                </div>
+                
+                <button class="slider-button prev" id="prevButton" aria-label="Previous slide">←</button>
+                <button class="slider-button next" id="nextButton" aria-label="Next slide">→</button>
+                
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+        </section>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const slider = document.getElementById('imageSlider');
+                    const slides = slider.querySelectorAll('.slide');
+                    const dots = document.querySelectorAll('.slider-dot');
+                    const prevButton = document.getElementById('prevButton');
+                    const nextButton = document.getElementById('nextButton');
+                    const sliderContainer = document.getElementById('sliderContainer');
+                    const progress = document.getElementById('progress');
+                    
+                    let currentSlide = 0;
+                    let autoSlideInterval;
+                    let progressInterval;
+                    const autoSlideDelay = 4000;
+                    
+                    function updateProgress(reset = false) {
+                        if (reset) {
+                            progress.style.width = '0%';
+                            clearInterval(progressInterval);
+                        }
+                        
+                        let width = 0;
+                        progressInterval = setInterval(() => {
+                            width += 100 / (autoSlideDelay / 100);
+                            if (width <= 100) {
+                                progress.style.width = width + '%';
+                            }
+                        }, 100);
+                    }
+        
+                    function changeSlide(newSlide, updateProgressBar = true) {
+                        slides[currentSlide].classList.remove('active');
+                        dots[currentSlide].classList.remove('active');
+                        
+                        currentSlide = newSlide;
+                        
+                        slides[currentSlide].classList.add('active');
+                        dots[currentSlide].classList.add('active');
+                        
+                        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                        
+                        if (updateProgressBar) {
+                            updateProgress(true);
+                        }
+                    }
+        
+                    function nextSlide() {
+                        let nextSlide = (currentSlide + 1) % slides.length;
+                        changeSlide(nextSlide);
+                    }
+        
+                    function prevSlide() {
+                        let prevSlide = (currentSlide - 1 + slides.length) % slides.length;
+                        changeSlide(prevSlide);
+                    }
+        
+                    function startAutoSlide() {
+                        autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
+                        updateProgress(true);
+                    }
+        
+                    function resetAutoSlide() {
+                        stopAutoSlide();
+                        startAutoSlide();
+                    }
+        
+                    function stopAutoSlide() {
+                        clearInterval(autoSlideInterval);
+                        clearInterval(progressInterval);
+                        progress.style.width = '0%';
+                    }
+        
+                    // Touch support
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+                    
+                    sliderContainer.addEventListener('touchstart', (e) => {
+                        touchStartX = e.touches[0].clientX;
+                        stopAutoSlide();
+                    }, { passive: true });
+                    
+                    sliderContainer.addEventListener('touchmove', (e) => {
+                        touchEndX = e.touches[0].clientX;
+                    }, { passive: true });
+                    
+                    sliderContainer.addEventListener('touchend', () => {
+                        const swipeThreshold = 50;
+                        const swipeDistance = touchStartX - touchEndX;
+                        
+                        if (Math.abs(swipeDistance) > swipeThreshold) {
+                            if (swipeDistance > 0) {
+                                nextSlide();
+                            } else {
+                                prevSlide();
+                            }
+                        }
+                        
+                        resetAutoSlide();
+                    });
+        
+                    // Keyboard navigation
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowLeft') {
+                            prevSlide();
+                            resetAutoSlide();
+                        } else if (e.key === 'ArrowRight') {
+                            nextSlide();
+                            resetAutoSlide();
+                        }
+                    });
+        
+                    // Event listeners
+                    dots.forEach(dot => {
+                        dot.addEventListener('click', () => {
+                            const slideIndex = parseInt(dot.dataset.slide);
+                            changeSlide(slideIndex);
+                            resetAutoSlide();
+                        });
+                    });
+        
+                    prevButton.addEventListener('click', () => {
+                        prevSlide();
+                        resetAutoSlide();
+                    });
+                    
+                    nextButton.addEventListener('click', () => {
+                        nextSlide();
+                        resetAutoSlide();
+                    });
+        
+                    sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+                    sliderContainer.addEventListener('mouseleave', resetAutoSlide);
+        
+                    // Preload images
+                    slides.forEach(slide => {
+                        const img = slide.querySelector('img');
+                        const src = img.getAttribute('src');
+                        if (src) {
+                            const image = new Image();
+                            image.src = src;
+                        }
+                    });
+        
+                    // Start auto-slide
+                    startAutoSlide();
+                });
+            </script>
+    
+    <section class="feature-grid">
+        <div class="feature-card">
+            <i class="fas fa-search"></i>
+            <h3>Advanced Reconnaissance</h3>
+            <p>Comprehensive network vulnerability scanning with intelligent port and service detection.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Adaptive Attack Simulation</h3>
+            <p>Sophisticated attack modes including SYN Flood, HTTP DDoS, and custom exploit testing.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-file-alt"></i>
+            <h3>Detailed Logging</h3>
+            <p>Real-time, customizable logging for thorough security assessment documentation.</p>
+        </div>
+    </section>
+    
+            <section class="code-section">
+                <h2>Toolkit Workflow</h2>
+                <pre>1. Reconnaissance: Intelligent network intelligence gathering
+    2. Analysis: Advanced vulnerability evaluation
+    3. Simulation: Precision-targeted controlled attacks
+    4. Documentation: Comprehensive interaction logging</pre>
+            </section>
+    
+            <section class="cta-section">
+                <h2>Elevate Your Security Testing</h2>
+                <p>ShadowStrike provides professional-grade network security assessment capabilities.</p>
+                <a href="https://github.com/MrShankarAryal/ShadowStrike/archive/refs/heads/main.zip" class="cta-button" target="_blank">
+                    <i class="fas fa-download"></i> Get ShadowStrike
+                </a>
+            </section>
+    <section class=" class="UserDoc"">
+         
+   
+            <section class="faq-section">
+                <h2>User Documentation</h2>
+                <div class="warning-box">
+                    <strong>⚠️ Important Notice:</strong> ShadowStrike is intended for educational and ethical hacking purposes only. Use this tool exclusively in authorized environments and testing scenarios.
+                </div>
+    
+                <div class="faq-item">
+                    
+                    <h3>Installation</h3>
+                    <a id="or-down" href="https://github.com/MrShankarAryal/ShadowStrike/archive/refs/heads/main.zip" class="cta-button" target="_blank">
+                        <i class="fas fa-download"></i> Get ShadowStrike
+                    </a>
+                    <h3 id="or">OR</h3>
+                    <pre>git clone https://github.com/MrShankarAryal/ShadowStrike.git
+    cd ShadowStrike
+    pip install -r requirements.txt
+    python gui.py</pre>
+                </div>
+    
+                <h2 class="step-box" >Quick Start Guide</h2>
+               
+    
+              
+            
+                <h2>1.1. Reconnaissance</h2>
+                <div class="step-box">
+                    <h3><span class="step">1</span>Start Recon</h3>
+                    <ul>
+                        <li>Enter the <strong>Target IP</strong> in the designated field</li>
+                        <li>Click on the <strong>Start Recon</strong> button to initiate reconnaissance</li>
+                        <li>Results will display in the log box</li>
+                    </ul>
+            
+                    <h3><span class="step">2</span>Interpret Recon Data</h3>
+                    <ul>
+                        <li>Review displayed information about open ports, operating systems, and active services</li>
+                        <li>Use this intelligence to inform your testing strategy</li>
+                    </ul>
+                </div>
+            
+                <h2>1.2. Attack Modes</h2>
+                <div class="step-box">
+                    <h3><span class="step">1</span>Select Target Details</h3>
+                    <ul>
+                        <li>Enter both <strong>Target IP</strong> and <strong>Target URL</strong></li>
+                    </ul>
+            
+                    <h3><span class="step">2</span>Choose Attack Mode</h3>
+                    <div class="attack-mode">
+                        <ul>
+                            <li><strong>SYN Flood:</strong> TCP connection overload testing</li>
+                            <li><strong>HTTP DDoS:</strong> Web server stress testing</li>
+                            <li><strong>Stealth Probe:</strong> Low-profile vulnerability scanning</li>
+                            <li><strong>Custom Exploit:</strong> Configurable attack parameters</li>
+                        </ul>
+                    </div>
+            
+                    <h3><span class="step">3</span>Initiate Attack</h3>
+                    <ul>
+                        <li>Click the <strong>Start Attack</strong> button</li>
+                        <li>Monitor real-time feedback in the log section</li>
+                    </ul>
+            
+                    <h3><span class="step">4</span>Stop Attack</h3>
+                    <ul>
+                        <li>Press the <strong>Stop Attack</strong> button to halt operations</li>
+                        <li>Always terminate attacks promptly to prevent unintended system damage</li>
+                    </ul>
+                </div>
+            
+                <h2>1.3. Logging and Monitoring</h2>
+                <div class="info-box">
+                    <p>All activities are logged in the <code>logs</code> directory under <code>shadowstrike.log</code></p>
+                    <strong>Logged Information:</strong>
+                    <ul>
+                        <li>Reconnaissance results (ports, OS, services)</li>
+                        <li>Attack timestamps and system events</li>
+                        <li>Error messages and warnings</li>
+                    </ul>
+                </div>
+            
+                <h2>Effective Use of ShadowStrike</h2>
+                <div class="best-practice">
+                    <h3>1. Strategic Reconnaissance</h3>
+                    <ul>
+                        <li>Conduct thorough reconnaissance before launching attacks</li>
+                        <li>Analyze target infrastructure to select appropriate attack modes</li>
+                    </ul>
+            
+                    <h3>2. Attack Mode Selection</h3>
+                    <ul>
+                        <li>Choose attack modes based on reconnaissance findings</li>
+                        <li>Consider target system characteristics when selecting attack parameters</li>
+                    </ul>
+            
+                    <h3>3. Real-Time Monitoring</h3>
+                    <ul>
+                        <li>Keep log display visible during operations</li>
+                        <li>Monitor for unexpected responses or errors</li>
+                        <li>Adjust parameters based on real-time feedback</li>
+                    </ul>
+            
+                    <h3>4. Documentation</h3>
+                    <ul>
+                        <li>Maintain detailed records of all testing sessions</li>
+                        <li>Include reconnaissance data and attack results in reports</li>
+                        <li>Document discovered vulnerabilities systematically</li>
+                    </ul>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Legal and Ethical Considerations:</strong>
+                    <ul >
+                        <li class="ul-warn">Only use ShadowStrike in authorized testing environments</li>
+                        <li class="ul-warn">Obtain proper permissions before testing any systems</li>
+                        <li class="ul-warn">Follow responsible disclosure practices for discovered vulnerabilities</li>
+                    </ul>
+                </div>
+    
+                <h2 class="box-cont">FAQ and Troubleshooting <hr></h2>
+                <div class="faq-item">
+                    <h4>Q: Why is my attack not starting?</h3>
+                    <ul>
+                        <li>Verify target IP and URL are correctly entered</li>
+                        <li>Confirm an attack mode is selected</li>
+                    </ul>
+                </div>
+    
+                <div class="faq-item">
+                    <h4>Q: How can I access detailed logs?</h3>
+                    <p>Open the latest .log file in the logs directory. Each log is timestamped for easy reference.</p>
+                </div>
+    
+                <h2 class="box-cont">Future Updates and Planned Features <hr></h2>
+               
+                <ul>
+                    <li><span class="highlight">Enhanced Reconnaissance:</span> Network mapping and automated vulnerability detection</li>
+                    <li><span class="highlight">Advanced Attack Modules:</span> AI-powered adaptive attacks</li>
+                    <li><span class="highlight">User Customization:</span> Modular plugin system and interface themes</li>
+                </ul>
+            </section>
+        </section>
+    
+            <section class="documentation-section">
+                <h2>Developer Documentation</h2>
+                
+                <h3>Project Structure</h3>
+                <div class="module-tree">
+                    <pre>
+        ShadowStrikeAuto/
+        ├── core/                     
+        │   ├── __init__.py
+        │   ├── recon.py              # Reconnaissance
+        │   ├── auto_attack.py        # Attack coordinator
+        │   ├── packet_flood.py       # SYN Flood attacks
+        │   ├── http_ddos.py          # HTTP DDoS attacks
+        │   ├── stealth_probe.py      # Stealth probing
+        │   └── exploit_module.py     # Custom exploits
+        ├── config/                   
+        │   ├── targets.json          # Target configs
+        │   └── attack_config.yaml    # Attack settings
+        └── utils/                    
+            ├── ip_utils.py           # IP helpers
+            ├── logger.py             # Logging system
+            └── decision_engine.py    # Attack strategy</pre>
+                </div>
+        
+                <h3>Key Components</h3>
+                <div class="documentation-grid">
+                    <div class="doc-card">
+                        <h4>Reconnaissance Module</h4>
+                        <p>Handles target data collection including port scanning and OS detection. Initiates before attacks to gather intelligence.</p>
+                    </div>
+                    <div class="doc-card">
+                        <h4>Attack Module</h4>
+                        <p>Coordinates attack strategies based on reconnaissance data and user configurations. Manages different attack types.</p>
+                    </div>
+                    <div class="doc-card">
+                        <h4>Utilities Module</h4>
+                        <p>Provides IP handling, logging, and decision-making functionality. Core support for all operations.</p>
+                    </div>
+                    <div class="doc-card">
+                        <h4>Interface Module</h4>
+                        <p>Manages the PyQt5 GUI and automatic attack mode interfaces. Handles user interaction and display.</p>
+                    </div>
+                </div>
+        
+                <h3>Architecture Overview</h3>
+        <p class="arch">ShadowStrike is built on a modular architecture that separates concerns into distinct components while maintaining high cohesion and loose coupling. The system is designed around these core principles:</p>
+        
+        <div class="technical-notes">
+            <ul>
+                <li>Asynchronous operation handling for non-blocking network operations</li>
+                <li>Event-driven architecture for real-time attack monitoring</li>
+                <li>Modular plugin system for extensible attack vectors</li>
+                <li>Comprehensive logging and monitoring infrastructure</li>
+            </ul>
+        </div>
+    
+        <h3>Core Components</h3>
+        
+        <h4 id="core">1. Network Reconnaissance Engine</h4>
+        <div class="implementation-example">
+            <div class="arch">The reconnaissance engine implements intelligent network scanning with adjustable stealth levels.</div>
+            <div class="code-block">
+                <pre>
+    from shadowstrike.core.recon import ReconEngine
+    
+    async def perform_stealth_scan(target: str, stealth_level: int = 2):
+        recon = ReconEngine(
+            target=target,
+            scan_type='SYN_STEALTH',
+            timeout=30,
+            max_retries=3
+        )
+        
+        try:
+            scan_results = await recon.execute_scan()
+            return scan_results
+        except ReconTimeout as e:
+            logger.error(f"Scan timeout: {str(e)}")
+            raise</pre>
+            </div>
+        </div>
+    
+        <h4  id="core">2. Attack Orchestration System</h4>
+        <div class="implementation-example">
+            <p class="arch">The attack orchestrator manages concurrent attack vectors while maintaining system stability.</p>
+            <div class="code-block">
+                <pre>
+    from shadowstrike.core.orchestrator import AttackOrchestrator
+    from shadowstrike.models import AttackVector
+    
+    async def launch_coordinated_attack(
+        target: str,
+        vectors: List[AttackVector],
+        duration: int
+    ):
+        orchestrator = AttackOrchestrator(
+            max_concurrent_attacks=5,
+            resource_monitor=True
+        )
+        
+        attack_config = {
+            'target': target,
+            'vectors': vectors,
+            'duration': duration,
+            'fallback_strategy': 'graceful_degradation'
+        }
+        
+        return await orchestrator.execute(attack_config)</pre>
+            </div>
+        </div>
+    
+        <h3>API Reference</h3>
+        
+        <h4  id="core">Reconnaissance API</h4>
+        <div class="api-endpoint">
+            <span class="method">POST</span> <code id="urlLoc">/api/v1/recon/scan</code>
+            <p class="arch">Initiates a new reconnaissance scan on the target.</p>
+            
+            <h5>Parameters</h5>
+            <table class="parameter-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Required</th>
+                </tr>
+                <tr>
+                    <td>target</td>
+                    <td>string</td>
+                    <td>Target IP or hostname</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>scan_type</td>
+                    <td>enum</td>
+                    <td>SYN_STEALTH, TCP_CONNECT, UDP_SCAN</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>timeout</td>
+                    <td>integer</td>
+                    <td>Scan timeout in seconds</td>
+                    <td>No</td>
+                </tr>
+            </table>
+        </div>
+    
+        <h3>Error Handling</h3>
+        <div class="technical-notes">
+            <p >ShadowStrike implements a comprehensive error handling system:</p>
+            <div class="code-block">
+                <pre>
+    from shadowstrike.exceptions import ShadowStrikeError
+    
+    class ReconError(ShadowStrikeError):
+        """Base exception for reconnaissance errors."""
+        def __init__(self, message: str, error_code: int):
+            super().__init__(message)
+            self.error_code = error_code
+    
+    class NetworkTimeout(ReconError):
+        """Raised when network operations timeout."""
+        pass
+    
+    # Implementation
+    try:
+        await recon_engine.execute()
+    except NetworkTimeout as e:
+        logger.error(f"Operation failed: {e.error_code}")
+        await cleanup_resources()
+    except ShadowStrikeError as e:
+        logger.critical(f"Critical error: {str(e)}")
+        await emergency_shutdown()</pre>
+            </div>
+        </div>
+    
+        <h3>Performance Optimization</h3>
+        <div class="implementation-example">
+            <p class="arch">Key performance considerations for production deployment:</p>
+            <ul class="arch">
+                <li >Implement connection pooling for HTTP-based attacks</li>
+                <li>Use asynchronous I/O for network operations</li>
+                <li>Employ rate limiting and backoff strategies</li>
+                <li>Monitor system resource utilization</li>
+            </ul>
+            <div class="code-block">
+                <pre>
+    from shadowstrike.utils.performance import ConnectionPool
+    
+    async with ConnectionPool(
+        max_size=100,
+        timeout=30,
+        keep_alive=True
+    ) as pool:
+        async for target in targets:
+            await pool.execute_attack(
+                target,
+                rate_limit=1000,  # requests per second
+                backoff_strategy='exponential'
+            )</pre>
+            </div>
+        </div>
+    
+        <h3>Security Considerations</h3>
+        <div class="technical-notes">
+            <p>Critical security practices for implementation:</p>
+            <ul>
+                <li>Implement proper authentication and authorization</li>
+                <li>Encrypt all sensitive configuration data</li>
+                <li>Use secure random number generation for attack patterns</li>
+                <li>Implement rate limiting and attack throttling</li>
+                <li>Maintain comprehensive audit logs</li>
+            </ul>
+        </div>
+    
+        <h3>Testing Framework</h3>
+        <div class="implementation-example">
+            <p class="arch">Comprehensive testing suite for validation:</p>
+            <div class="code-block">
+                <pre>
+    import pytest
+    from shadowstrike.testing import MockNetwork
+    
+    @pytest.mark.asyncio
+    async def test_attack_vector(mock_network: MockNetwork):
+        config = {
+            'target': '192.168.1.1',
+            'vector': 'SYN_FLOOD',
+            'duration': 30
+        }
+        
+        async with mock_network.simulate():
+            result = await launch_attack(config)
+            assert result.success
+            assert result.packets_sent > 0
+            assert result.response_time < 1000  # ms</pre>
+            </div>
+        </div>
+            </section>
+        </div>
+    
+     
+
+      <section class="section blog">
+        <div class="container">
+            <h2 class="h2 section-title">Other Blog Suggestion</h2>
+            <div class="blog-list">
+                <!-- Blog post cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    </article>
+  </main>
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+        <p class="copyright">
+            &copy; 2022 <a href="#" class="copyright-link">Shankar Aryal</a>. All Rights Reserved
+        </p>
+        <ul class="footer-list">
+            <li>
+                <a href="#" class="footer-link" id="termsLink">Terms & Conditions</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link" id="privacyLink">Privacy Policy</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<!-- Pop-up for Terms & Conditions -->
+<div id="termsPopup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Terms & Conditions</h2>
+        <p>
+            Welcome to Shankar Aryal's website. By accessing this website, you agree to comply with and be bound by the following terms and conditions of use.
+        </p>
+        <p>
+            The content of this website is for your general information and use only. It is subject to change without notice.
+        </p>
+        <p>
+            Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.
+        </p>
+        <!-- Add more terms as needed -->
+    </div>
+</div>
+
+<!-- Pop-up for Privacy Policy -->
+<div id="privacyPopup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Privacy Policy</h2>
+        <p>
+            Your privacy is important to us. It is Shankar Aryal's policy to respect your privacy regarding any information we may collect from you across our website.
+        </p>
+        <p>
+            We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we're collecting it and how it will be used.
+        </p>
+        <p>
+            We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we'll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.
+        </p>
+        <!-- Add more privacy policy details as needed -->
+    </div>
+</div>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/Blog.js"></script>
+  <script src="../assets/js/privacy&policy.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
