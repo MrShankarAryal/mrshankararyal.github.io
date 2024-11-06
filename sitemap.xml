@@ -1,22 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
   <!-- Main page -->
   <url>
     <loc>https://mrshankararyal.github.io/</loc>
     <lastmod>2024-08-29</lastmod>
-<changefreq>weekly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/images/hero-banner.avif</image:loc>
+      <image:title>Shankar Aryal</image:title>
+      <image:caption>Profile Image of Shankar Aryal</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/images/about-banner.avif</image:loc>
+      <image:title>Shankar Aryal</image:title>
+      <image:caption>About Section Banner</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/images/absolute-image.avif</image:loc>
+      <image:title>Shankar Aryal</image:title>
+      <image:caption>Additional Profile Image</image:caption>
+    </image:image>
   </url>
 
-  <!-- Blog posts -->
+  <!-- Blog posts with their images -->
+  <url>
+    <loc>https://mrshankararyal.github.io/blog-post/blog7.html</loc>
+    <lastmod>2024-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/blog-img/sstrike.avif</image:loc>
+      <image:title>ShadowStrike: Advanced Network Security Testing</image:title>
+      <image:caption>Network Security Tools Illustration</image:caption>
+    </image:image>
+  </url>
+
   <url>
     <loc>https://mrshankararyal.github.io/blog-post/blog1.html</loc>
     <lastmod>2024-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/blog-img/blog-learnme-1.avif</image:loc>
+      <image:title>The Future of Web Development with LearnMe</image:title>
+      <image:caption>LearnMe Founder's Vision for Web Development</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -24,13 +55,23 @@
     <lastmod>2024-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/blog-img/poem-11.avif</image:loc>
+      <image:title>सपनाको क्यानभास</image:title>
+      <image:caption>Poem Illustration - Canvas of Dreams</image:caption>
+    </image:image>
   </url>
-  
+
   <url>
     <loc>https://mrshankararyal.github.io/blog-post/blog3.html</loc>
     <lastmod>2024-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/blog-img/quntaimg.avif</image:loc>
+      <image:title>Network Security Threats with Quantum Shield</image:title>
+      <image:caption>Quantum-inspired Security Solutions</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -38,6 +79,11 @@
     <lastmod>2024-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/blog-img/crow.avif</image:loc>
+      <image:title>काग्</image:title>
+      <image:caption>Poem Illustration - The Crow</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -45,20 +91,23 @@
     <lastmod>2024-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/blog-img/chihan-cut.avif</image:loc>
+      <image:title>चिहानले पुकार छ?</image:title>
+      <image:caption>Poem Illustration - The Call of the Grave</image:caption>
+    </image:image>
   </url>
 
- <url>
+  <url>
     <loc>https://mrshankararyal.github.io/blog-post/blog6.html</loc>
     <lastmod>2024-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mrshankararyal.github.io/assets/blog-img/cryptoguard.avif</image:loc>
+      <image:title>Crypto Guard</image:title>
+      <image:caption>AES Encryption and Decryption Tool</image:caption>
+    </image:image>
   </url>
 
-         <url>
-    <loc>https://mrshankararyal.github.io/blog-post/blog7.html</loc>
-    <lastmod>2024-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-        
 </urlset>
