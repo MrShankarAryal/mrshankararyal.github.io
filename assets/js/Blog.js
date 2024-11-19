@@ -1,5 +1,6 @@
 // Enhanced blog post data with tags
 const blogPosts = [
+    
     {
         title: "ShadowStrike: Advanced Network Security Testing",
         summary: "Empowering Ethical Hackers with Cutting-Edge Network Security Tools",
@@ -50,7 +51,13 @@ const blogPosts = [
         url: "blog6.html",
         tags: ["security", "cryptography", "technology"]
     },
-   
+    {
+        title: "अन्धकारको यात्री",
+        summary: "शंकर अयार्ल द्वारा लेखिएको 'अन्धकारको यात्री' कविता मानव जीवनको त्रिविध यात्रालाई चित्रित गर्दछ, जहाँ हराउनु र पाउनु एउटै सिक्काका दुई पाटा हुन्। यो कविता प्रेम, आत्म-खोजी र मुक्ति प्राप्तिको यात्रा प्रस्तुत गर्दछ।",
+        image: "../assets/blog-img/अन्धकारको यात्री.avif",
+        url: "blog8.html",
+        tags: ["poetry", "nepali", "literature", "spirituality", "philosophy"]
+    },
 ];
 
 // Fisher-Yates shuffle algorithm
