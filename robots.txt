@@ -1,6 +1,6 @@
-# robots.txt for https://mrshankararyal.github.io/
+# robots.txt for https://www.shankararyal404.com.np/
 
 User-agent: *
 Disallow:
 
-Sitemap: https://mrshankararyal.github.io/sitemap.xml
+Sitemap: https://www.shankararyal404.com.np/sitemap.xml
